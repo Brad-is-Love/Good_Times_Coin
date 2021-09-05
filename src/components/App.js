@@ -1,21 +1,61 @@
 import React, { Component } from 'react';
-import logo from '../logo.png';
+import Web3 from 'web3'
+import logo from '../Good times 42069.jpg';
 import './App.css';
 
 class App extends Component {
+
+async componentWillMount(){
+  await this.loadWeb3()
+  await this.loadBlockchainData()
+}
+
+  async loadWeb3() {
+    if (window.ethereum){
+      window.web3 = new Web3(window.ethereum)
+      await window.ethereum.enable()
+    } else if (window.web3) {
+    window.web3 = new Web3(window.web3.currentprovider)
+  } else{
+    window.alert('install MetaMask')
+    }
+  }
+constructor(props){
+  super(props)
+  this.state = {
+    account: ''
+    }
+  }
+
+
+  async loadBlockchainData() {
+    const web3 = window.web3
+    const accounts = await web3.eth.getAccounts()
+    this.setState ({account:accounts[0]})
+    console.log(accounts[0])
+  }
+
+
+
   render() {
     return (
       <div>
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a
+          <a          
             className="navbar-brand col-sm-3 col-md-2 mr-0"
             href="http://www.dappuniversity.com/bootcamp"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Dapp University
+            Brad's Crypto NFT Paradise
           </a>
+          <ul className="navbar-nav px-3">
+            <li className="nav-item text-nowrap d-none d-sm-block">
+              <small className="text-white"><span id="account">Account: {this.state.account}</span></small>
+            </li>
+          </ul>
         </nav>
+        
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
@@ -27,19 +67,8 @@ class App extends Component {
                 >
                   <img src={logo} className="App-logo" alt="logo" />
                 </a>
-                <h1>Dapp University Starter Kit</h1>
-                <p>
-                  Edit <code>src/components/App.js</code> and save to reload.
-                </p>
-                <a
-                  className="App-link"
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LEARN BLOCKCHAIN <u><b>NOW! </b></u>
-                </a>
-              </div>
+                <h1>Good NFTimers</h1>
+                </div>
             </main>
           </div>
         </div>
