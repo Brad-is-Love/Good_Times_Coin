@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721Full.sol";
+import "./ERC721Full.sol";
 
 contract Color is ERC721Full{
     string [] public colors;
@@ -11,13 +11,10 @@ contract Color is ERC721Full{
     }
 
 
-function mint(string memory _color) public {
-    // Require unique colour
+  function mint(string memory _color) public {
     require(!_colorExists[_color]);
     uint _id = colors.push(_color);
-    // sender should be the app
     _mint(msg.sender, _id);
     _colorExists[_color] = true;
-    
 }
 }

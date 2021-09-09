@@ -60,7 +60,7 @@ describe('indexing', async() => {
             color = await contract.colors(i-1)
             result.push(color)
         }
-        let expected = ['#EC058E','#5386E4','#FFFFFF','#000000']
+        let expected = ['#EC058E','#FF44FFF','#000000']
         assert.equal(result.join(','), expected.join(','))
     })
 })
