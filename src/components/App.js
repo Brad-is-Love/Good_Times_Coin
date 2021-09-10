@@ -3,6 +3,7 @@ import Web3 from 'web3'
 import logo from '../Good times 42069.jpg';
 import './App.css';
 import Color from '../abis/Color.json'
+import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
 
 class App extends Component {
 
@@ -56,7 +57,20 @@ async componentWillMount(){
       })
     })
     }
+
+  getRandomInt(arrayLength) {
+  return Math.floor(Math.random() * arrayLength);
+  }
   
+  sentenceGenerator() {
+    let firstWord = firstPart[this.getRandomInt(firstPart.length)]
+    let secondWord = secondPart[this.getRandomInt(secondPart.length)]
+    let thirdWord = thirdPart[this.getRandomInt(thirdPart.length)]
+    let lastWord = lastPart[this.getRandomInt(lastPart.length)]
+    let fifthWord = thirdPart[this.getRandomInt(thirdPart.length)]
+    let sentence = '"'+firstWord+" "+secondWord+" "+thirdWord+" "+lastWord+" "+fifthWord+'"'
+    this.mint(sentence)
+  }
 
 constructor(props){
   super(props)
@@ -67,6 +81,7 @@ constructor(props){
     colors: []
     }
   }
+
 
   render() {
     return (
@@ -99,12 +114,18 @@ constructor(props){
                   <img src={logo} className="App-logo" alt="logo" />
                 </a>
                 <h1>Issue Token</h1>
-                <form onSubmit={(event)=>{
+                {/* <button onClick={(event)=>{
                   event.preventDefault()
                   const color = this.color.value
                   this.mint(color)
-                }}>
-                  <input type="text"
+                }}>MINT TOKEN</button> */}
+
+                <button onClick={(event)=>{
+                  event.preventDefault()
+                  this.sentenceGenerator()
+                }}>MINT TOKEN</button>
+                
+                  {/* <input type="text"
                   className='form-control mb-1' 
                   placeholder='e.g #FFFFFF'
                   ref={(input) => {this.color = input}}/>
@@ -112,7 +133,7 @@ constructor(props){
                   className='btn btn-block btn primary'
                   value='MINT' />
                 
-                </form>
+                </form> */}
 
 
 
@@ -124,9 +145,8 @@ constructor(props){
           <div classname="row text-center">
             {this.state.colors.map((color, key) => {
               return(
-              <div key={key} class='col-md-3 mb-3'>
-            <div className='token' style={{ backgroundColor: color}}></div>
-            <div>{color}</div>
+              <div key={key}>
+            <div><center><h4>{color}</h4></center><br /></div>
             </div>
               )
             })}
