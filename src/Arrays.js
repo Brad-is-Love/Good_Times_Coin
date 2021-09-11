@@ -1,29 +1,54 @@
 export var firstPart = [
-"The secret to",
-"The first step towards",
-"The key to",
-"The path to",
-"The central component of"
+"The secrets to",
+"The first steps towards",
+"The keys to",
+"The foundations of",
+"The central components of",
+"The most important ingredients of",
+"The key elements of"
 ];
 
 export var secondPart = [
-'financial success is',
-'happiness is',
-'excellence is',
-'achieving enlightenment is',
-'good times is',
-'finding a girlfriend is',
-'finding a boyfriend is',
-'a fulfilling life is',
-'a happy marriage is',
-'stable relationships is',
-'longevity is'
+'financial success are',
+'happiness are',
+'excellence are',
+'achieving enlightenment are',
+'good times are',
+'finding a girlfriend are',
+'finding a boyfriend are',
+'a fulfilling life are',
+'a happy marriage are',
+'stable relationships are',
+'longevity are'
 ];
 
 export var thirdPart = [
-'transcendental meditation','Scientology','faith in Jesus','regular masturbation','daily yoga','cocaine','weed','homebrew tequila','high doses of LSD','a strict vegan diet','Ecstasy','regular exercise','self-medication','hookers','the withdrawal method','Twitter','Ivermectin','birth control','Good Times Coin','Facebook moms groups','Tinder','ketamine'
+'transcendental meditation',
+'listening to your racist uncle',
+'intermittent fasting',
+'Scientology',
+'faith in Jesus',
+'regular masturbation',
+'daily yoga',
+'cocaine',
+'high-strength edibles',
+'homebrew tequila',
+'high doses of LSD',
+'a strict vegan diet',
+'Ecstasy',
+'regular exercise',
+'self-medication',
+'hookers',
+'the "withdrawal method"',
+'Twitter',
+'Ivermectin',
+'birth control',
+'Good Times Coin',
+'Facebook moms groups',
+'Tinder',
+'ketamine'
 ]
 
 export var lastPart = [
-    'and', 'and avoiding'
+    'and', 'and', 'and avoiding'
 ]

@@ -1,9 +1,9 @@
 {
-  "short_name": "Starter Kit",
-  "name": "Dapp University Starter Kit",
+  "short_name": "GTC",
+  "name": "Good Times Coin",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "gtc_oo;_icon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }

@@ -6,7 +6,7 @@ contract Color is ERC721Full{
     string [] public colors;
     mapping(string => bool) _colorExists;
 
-    constructor()ERC721Full("Color", "COLOR") public{
+    constructor()ERC721Full("Sentences", "GTS") public{
 
     }
 

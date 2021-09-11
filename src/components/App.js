@@ -58,6 +58,7 @@ async componentWillMount(){
     })
     }
 
+   
   getRandomInt(arrayLength) {
   return Math.floor(Math.random() * arrayLength);
   }
@@ -93,7 +94,7 @@ constructor(props){
             target="_blank"
             rel="noopener noreferrer"
           >
-            Brad's Crypto NFT Paradise
+            Good Times Life Advice - NFT Generator
           </a>
           <ul className="navbar-nav px-3">
             <li className="nav-item text-nowrap d-none d-sm-block">
@@ -113,29 +114,13 @@ constructor(props){
                 >
                   <img src={logo} className="App-logo" alt="logo" />
                 </a>
-                <h1>Issue Token</h1>
-                {/* <button onClick={(event)=>{
-                  event.preventDefault()
-                  const color = this.color.value
-                  this.mint(color)
-                }}>MINT TOKEN</button> */}
-
+                <h2>Get some solid life advice</h2>
+                <br />
                 <button onClick={(event)=>{
                   event.preventDefault()
                   this.sentenceGenerator()
-                }}>MINT TOKEN</button>
-                
-                  {/* <input type="text"
-                  className='form-control mb-1' 
-                  placeholder='e.g #FFFFFF'
-                  ref={(input) => {this.color = input}}/>
-                  <input type="submit"
-                  className='btn btn-block btn primary'
-                  value='MINT' />
-                
-                </form> */}
-
-
+                }}>MINT MOTIVATIONAL NFT</button>
+                <br /><br />
 
 
                 </div>
@@ -143,7 +128,7 @@ constructor(props){
           </div>
           <hr />
           <div classname="row text-center">
-            {this.state.colors.map((color, key) => {
+            {this.state.colors.slice(0).reverse().map((color, key) => {
               return(
               <div key={key}>
             <div><center><h4>{color}</h4></center><br /></div>
