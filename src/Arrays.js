@@ -24,8 +24,8 @@ export var secondPart = [
 'success are',
 'victory are',
 'true wealth are',
-'innovation',
-'prosperity'
+'innovation are',
+'prosperity are'
 ];
 
 export var thirdPart = [
