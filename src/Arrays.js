@@ -19,7 +19,13 @@ export var secondPart = [
 'a fulfilling life are',
 'a happy marriage are',
 'stable relationships are',
-'longevity are'
+'longevity are',
+'overcoming adversity are',
+'success are',
+'victory are',
+'true wealth are',
+'innovation',
+'prosperity'
 ];
 
 export var thirdPart = [
@@ -37,7 +43,7 @@ export var thirdPart = [
 'a strict vegan diet',
 'Ecstasy',
 'regular exercise',
-'self-medication',
+'self-medicating',
 'hookers',
 'the "withdrawal method"',
 'Twitter',
@@ -46,9 +52,15 @@ export var thirdPart = [
 'Good Times Coin',
 'Facebook moms groups',
 'Tinder',
-'ketamine'
+'ketamine',
+'doing affirmations',
+'visualization',
+'generosity',
+'positive thinking',
+'an ayahuasca journey with an experienced guide',
+'kindness'
 ]
 
 export var lastPart = [
-    'and', 'and', 'and avoiding'
+    ', combined with', 'and', 'and', 'and', 'and' ,'and avoiding'
 ]

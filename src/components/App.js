@@ -128,7 +128,7 @@ constructor(props){
           </div>
           <hr />
           <div classname="row text-center">
-            {this.state.colors.slice(3).reverse().map((color, key) => {
+            {this.state.colors.slice(-5).reverse().map((color, key) => {
               return(
               <div key={key}>
             <div><center><h4>{color}</h4></center><br /></div>
