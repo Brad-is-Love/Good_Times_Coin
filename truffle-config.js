@@ -4,7 +4,7 @@ require('dotenv').config()
 //Local
 // const local_mnemonic = process.env.LOCAL_MNEMONIC
 // const local_private_key = process.env.LOCAL_PRIVATE_KEY
-// const local_url = process.env.LOCAL_0_URL;
+// const local_url = process.env.LOCALNET_URL;
 // //Testnet
 // const mnemonic = process.env.TESTNET_MNEMONIC
 // const privateKeyTest = process.env.TESTNET_PRIVATE_KEY
@@ -18,6 +18,8 @@ require('dotenv').config()
 
 const mnemonic = process.env.TESTNET_MNEMONIC
 const privateKeyTest = process.env.TESTNET_PRIVATE_KEY
+
+
 
 module.exports = {
   networks: {

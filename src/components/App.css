@@ -5,3 +5,51 @@
   border-radius: 50%;
   display: inline-block;
 }
+
+.banner {
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.banner .content {
+  display: block;
+  position: absolute; /* Position the background text */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(0, 0, 0); /* Fallback color*/
+  background: rgba(0, 0, 0, 0.5); /*Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.mintNFT {
+  display: block;
+  position: absolute; /* Position the background text */
+  left: 50%;
+  transform: translate(-50%);
+  padding: 10px;
+}
+
+.h2 {
+  text-align: center
+}
+
+.mintButton {
+  font-size: larger;
+  font-weight: 600;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  color: rgb(40, 40, 122);
+  background-color: rgb(187, 187, 187);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.mintButton:hover {
+  background-color: rgb(40, 40, 122); /* Green */
+  color: rgb(187, 187, 187);
+}

@@ -5,7 +5,8 @@ export var firstPart = [
 "The foundations of",
 "The central components of",
 "The most important ingredients of",
-"The key elements of"
+"The key elements of",
+"Two simple tricks for"
 ];
 
 export var secondPart = [
@@ -43,7 +44,7 @@ export var thirdPart = [
 'a strict vegan diet',
 'Ecstasy',
 'regular exercise',
-'self-medicating',
+'self-medication',
 'hookers',
 'the "withdrawal method"',
 'Twitter',
@@ -57,10 +58,10 @@ export var thirdPart = [
 'visualization',
 'generosity',
 'positive thinking',
-'an ayahuasca journey with an experienced guide',
+'ayahuasca',
 'kindness'
 ]
 
 export var lastPart = [
-    ', combined with', 'and', 'and', 'and', 'and' ,'and avoiding'
+    'and', 'and', 'and', 'and' ,'and avoiding'
 ]
