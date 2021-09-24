@@ -7,7 +7,8 @@ import logo from '../GTC Full Logo.jpg';
 import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
 // import {BrowserRouter as Router,  Switch,  Route,  Link} from "react-router-dom";
 import Nav from './Nav';
-import Banner from './Banner';
+// import Banner from './Banner';
+import Sample from './Sample';
 
 class App extends Component {
 
@@ -97,8 +98,6 @@ constructor(props){
   }
 
 
-  
-
   render() {
     return (
       <div>
@@ -123,7 +122,7 @@ constructor(props){
               )
             })}
           </div>
-          <Banner />
+          <Sample />
           <br /><br />
         </div>
       </div>
