@@ -104,11 +104,18 @@ constructor(props){
       <div>
         <Nav account={this.state.account}/>
         <br />
-        <div class="container mt-5">
-          <div class="row">
-            <div class="col-9">
 
-          <div class="container mt-5">
+        <div class="container mt-5">
+          <div class="row justify-content-end"> 
+          <div class="col-2 position-fixed ml-3 mt-5">
+            <div class="d-flex justify-content-around mt-2"><Banner logo={logo}/></div>
+            <div class="d-flex justify-content-around mt-2"><Links /></div>
+          </div>
+          </div>
+
+          <div class="row">              
+          <div class="col-10">
+          <div>
             <div >
             {/* this is the main sentence site */}
 
@@ -118,7 +125,7 @@ constructor(props){
             with just the URI stored in the on the blockchain itself and there's nothing <em>wrong</em> with that, 
             but what if you want a fully on-chain NFT? <br />  */}
             <br />
-            <p>The sophisticated <em>Good Times Algorithm</em> generates relevant, accurate, 
+            <p>The sophisticated <em>Good Times Algorithm</em> generates relevant 
             life advice that's guaranteed to bring you good times. It mints it into an NFT on the Harmony Network, that's yours to keep forever,
             <strong> for free!</strong> <br />
             except the network fee, which is but a fraction of a cent.</p>
@@ -154,10 +161,7 @@ constructor(props){
           <Sample />
           <Home />
           </div>
-          <div class="col-3">
-              <div class="d-flex justify-content-around mt-2"><Banner logo={logo}/></div>
-              <div class="d-flex justify-content-around mt-2"><Links /></div>
-            </div>
+ 
           </div>
         </div>
       </div>  

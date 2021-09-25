@@ -40,22 +40,6 @@
   text-align: center
 }
 
-.mintButton {
-  font-size: larger;
-  font-weight: 600;
-  border-radius: 4px;
-  transition-duration: 0.4s;
-  color: rgb(40, 40, 122);
-  background-color: rgb(187, 187, 187);
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-.mintButton:hover {
-  background-color: rgb(40, 40, 122); /* Green */
-  color: rgb(187, 187, 187);
-}
-
-
-
 .everything
 {
   position: relative; /* Position the background text */
