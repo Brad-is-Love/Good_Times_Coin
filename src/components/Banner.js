@@ -1,21 +1,18 @@
 import React from "react";
 import './App.css'
-import banner from '../CollectionSampleLong.jpg';
 
-function Banner() {
+function Banner(props) {
 
-    return (
+    return(
         <div>
-        <hr />
-        <div className="banner">
-            <img src={banner} alt="Good NF Timers Banner" />
-            <div className="content">
-                <h1>Good NF Timers</h1>
-                <h2>2,420 Unique Collectibles - Coming Soon!</h2>
+            <br /><br />
+            <div class="d-flex flex-row">
+                <div class="p-2"><img src={props.logo} className="App-logo" height="100em" padding-top="10px" alt="Good Times Coin Logo" />
+                </div>
+                <div class="p-2"><h1 style={{ color: '#283592' }}>Good Times Coin </h1>
+                    <p style={{ color: '#e01b84', fontSize: 'larger'}}>The only cryptocurrency <em>exclusively</em> focussed on bringing the good times</p>
+                </div>
             </div>
         </div>
-        </div>
-    );  
-}
-
+    )}
 export default Banner

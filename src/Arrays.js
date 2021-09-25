@@ -45,7 +45,7 @@ export var thirdPart = [
 'Ecstasy',
 'regular exercise',
 'self-medication',
-'hookers',
+'good old-fashioned elbow grease',
 'the "withdrawal method"',
 'Twitter',
 'Ivermectin',

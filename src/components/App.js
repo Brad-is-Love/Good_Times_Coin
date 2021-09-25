@@ -3,12 +3,14 @@ import Web3 from 'web3'
 import './App.css';
 import Color from '../abis/Color.json'
 import logo from '../GTC Full Logo.jpg';
-// import About from './About';
 import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
 // import {BrowserRouter as Router,  Switch,  Route,  Link} from "react-router-dom";
 import Nav from './Nav';
-// import Banner from './Banner';
 import Sample from './Sample';
+import Home from './Home';
+import Banner from './Banner';
+import Footer from './Footer';
+import Links from './Links';
 
 class App extends Component {
 
@@ -101,9 +103,32 @@ constructor(props){
   render() {
     return (
       <div>
-        <Nav account={this.state.account} logo={logo}/>
+        <Nav account={this.state.account}/>
+        <Banner logo={logo}/>
+        <Home />
+        <Links />
+        <hr />
+        {/* this is the main sentence site */}
+        <div className ="everything">
+          <center>
+          <h4>Life Advice NFT Generator</h4>
+          Most NFT images are stored off-chain on a service like&nbsp;
+          <a href="https://ipfs.io/" target="_blank" rel="noopener noreferrer">IPFS</a>&nbsp;
+          with just the URI stored in the on the blockchain itself and there's nothing <em>wrong</em> with that, 
+          but what if you want a fully on-chain NFT? <br /> This sophisticated algorithm generates relevant, up-to-date, 
+          life advice, guaranteed to bring you good times, and mints you a fully on-chain NFT <strong>for free!</strong>
+          <br />
+          </center>
+          {/* If you want to go deeper, copy your ONE address and head to the 
+          <a href="https://explorer.harmony.one/" target="_blank" rel="noopener noreferrer">block explorer</a>,
+          paste your address and click on the transaction hash of your last transaction. Then scroll down, copy the
+          code from the "input" field, paste it into this <a href="https://www.duplichecker.com/hex-to-text.php" target="_blank" rel="noopener noreferrer">hex to text converter</a>,
+          remove the 0x from the start and convert it. There is your NFT text straight from the ch-zain! */}
+        </div>
+        <br />
         <div>
         <center><h2>I'm not, like, a <em>qualified</em> counsellor, but...</h2></center>
+        <p></p>
           <center><button className="mintButton" onClick={(event)=>{
             event.preventDefault()
             this.sentenceGenerator()
@@ -111,8 +136,7 @@ constructor(props){
           </center>
           <br />
         </div>
-        <div>    
-        <hr />
+        <div>
           <div classname="row text-center">
             {this.state.colors.slice(-4).reverse().map((color, key) => {
               return(
@@ -124,6 +148,7 @@ constructor(props){
           </div>
           <Sample />
           <br /><br />
+          <Footer />
         </div>
       </div>
     );
