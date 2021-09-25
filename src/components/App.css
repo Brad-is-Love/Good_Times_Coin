@@ -54,22 +54,7 @@
   color: rgb(187, 187, 187);
 }
 
-.links {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(auto, auto);
-  width: 100%;
-}
 
-
-.link {
-  text-align: center;
-  width: 100%;
-}
-
-a:link {
-  font-size: large;
-}
 
 .everything
 {
@@ -80,3 +65,4 @@ a:link {
   padding: 10px;
   border: #e01b84;  
 }
+

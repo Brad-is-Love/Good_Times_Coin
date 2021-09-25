@@ -5,13 +5,17 @@ function Banner(props) {
 
     return(
         <div>
-            <br /><br />
-            <div class="d-flex flex-row">
-                <div class="p-2"><img src={props.logo} className="App-logo" height="100em" padding-top="10px" alt="Good Times Coin Logo" />
+            <div class="container text-center">
+                <div class = "row">
+                    <div class="col-5 ml-2">
+                        <img src={props.logo} height="100em" alt="Good Times Coin Logo" />
+                    </div>
+
+                    <div class="col-6">
+                        <h3 class="text-primary text-left">Good <br /> Times <br /> Coin</h3>
+                    </div>
                 </div>
-                <div class="p-2"><h1 style={{ color: '#283592' }}>Good Times Coin </h1>
-                    <p style={{ color: '#e01b84', fontSize: 'larger'}}>The only cryptocurrency <em>exclusively</em> focussed on bringing the good times</p>
-                </div>
+                <p style={{ color: '#e01b84'}}>The only cryptocurrency <em>exclusively</em> focussed on bringing the good times</p>
             </div>
         </div>
     )}
