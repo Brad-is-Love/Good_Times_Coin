@@ -8,27 +8,28 @@ import logo4 from "../Samples/GoodNFTimer_10.png";
 import logo5 from "../Samples/GoodNFTimer_7.png";
 import logo6 from "../Samples/GoodNFTimer_6.png";
 import logo7 from "../Samples/GoodNFTimer_11.png";
-import logo8 from "../Samples/GoodNFTimer_8.png";
 import logo9 from "../Samples/GoodNFTimer_9.png";
 
 
 function Sample() {
 
 const style = {
-
-    }
+maxWidth: "940px" 
+}
 
     return (
         <div>
-            <strong>Coming soon...</strong>
-            <h3 style={{ color: '#283592' }}>Good NF Timers</h3>
-            <h5>4269 Unique Collectibles on a 420x69 Pixel Canvas</h5>
-            <p>
-            Move your mouse over the image to explore</p>            
 
+            <p class="font-size: 2rem"><strong>Coming soon...</strong></p>
+            <h1><em>Good NF Timers</em></h1>
+            <p class="font-size: 2rem">4269 Unique Collectibles on a 420x69 Pixel Canvas</p>
+            <br />
+
+            <h4>Move your mouse over the image to explore</h4>
+                        
             <ReactFlashlight size={75} darkness={0.95}>
                 <div class="container" style={style}>
-                    <div class="row bg-dark">
+                    <div class="row bg-dark justify-content-center">
                         <img class="responsive m-3" src={logo} alt="test"/>
                         <img class="responsive m-3" src={logo2} alt="test"/>
                         <img class="responsive m-3" src={logo3} alt="test"/>
@@ -38,7 +39,6 @@ const style = {
                         <img class="responsive m-3" src={logo7} alt="test"/>
                         <img class="responsive m-3" src={logo9} alt="test"/>
                     </div>                    
-                
                 </div>
             </ReactFlashlight>
         </div>

@@ -1,4 +1,20 @@
 /* Styles go here */
+.logofont{
+font-family: 'Aclonica', sans-serif;
+}
+
+.generalfont{
+  font-family: 'Carme', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lemonada', cursive;
+}
+
+p {
+  font-size: larger;
+}
+
 .token {
   height: 150px;
   width: 150px;
@@ -36,9 +52,9 @@
   padding: 10px;
 }
 
-.h2 {
-  text-align: center
-}
+
+
+
 
 .everything
 {
@@ -50,3 +66,12 @@
   border: #e01b84;  
 }
 
+.faded
+{
+  opacity: 0.55
+}
+
+.moreFaded
+{
+  opacity: 0.15
+}
