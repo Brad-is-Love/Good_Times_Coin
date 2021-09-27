@@ -8,8 +8,6 @@ import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
 import Nav from './Nav';
 import Sample from './Sample';
 import Home from './Home';
-import Banner from './Banner';
-import Links from './Links';
 
 class App extends Component {
 
@@ -101,32 +99,24 @@ constructor(props){
 
   render() {
     return (
-      <div class="generalfont">
-        <Nav account={this.state.account}/>
-        <br />
-
-        <div class="container-fluid mt-5 ">
-          <div class="row d-flex flex-row-reverse pr-5 d.none"> 
-            <div class="col-2 position-fixed ml-3 mt-5 pt-5 pb-5">
-              <div class="d-flex justify-content-around"><Banner logo={logo}/></div>
-              <div class="d-flex justify-content-around mt-2"><Links /></div>
-            </div>
-          </div>
-        {/* </div> */}
-
       
-        <div class="row p-4">              
-          <div class="col-9 m-5 pl-4 pr-4">
-           <div class="row">
+        <div class="generalfont">
+
+        <div class="sitebackground p-5">
+        <Nav account={this.state.account}/>
+        <br /><br />
+          <div class="container border rounded bg-white mt-4 pt-2" >
+           <div class="row  p-3">
             {/* this is the main sentence site */}
-              <div class="col-8">
+              <div class="col-s-8">
                   <h1><em>Life Advice NFT Generator</em></h1>
                 {/* Most NFT images are stored off-chain on a service like&nbsp;
                 <a href="https://ipfs.io/" target="_blank" rel="noopener noreferrer">IPFS</a>&nbsp;
                 with just the URI stored in the on the blockchain itself and there's nothing <em>wrong</em> with that, 
                 but what if you want a fully on-chain NFT? <br />  */}
                 <br />
-                <p class="font-size: 2rem">This sophisticated algorithm generates life advice, guaranteed to bring you good times.
+                <p class="font-size: 2rem">We all want good times, but sometimes we just don't know <em> how</em>. <br />
+                  <br /> This sophisticated algorithm generates life advice, guaranteed to bring you good times.
                 <br />Mint yourself a <strong> free</strong> NFT on the Harmony Network! </p>
                 {/* If you want to go deeper, copy your ONE address and head to the 
                 <a href="https://explorer.harmony.one/" target="_blank" rel="noopener noreferrer">block explorer</a>,
@@ -137,13 +127,17 @@ constructor(props){
                 {/* <h2>I'm not, like, a <em>qualified</em> counsellor, but...</h2> */}
               </div>
               {/* Button */}
-              <div class="col-3 align-self-end">
-                <button class="btn btn-success btn-lg p-2 mb-5" onClick={(event)=>{
+              <div class="col-s-4 p-4">
+                <button class="btn btn-success btn-lg" onClick={(event)=>{
                     event.preventDefault()
                     this.sentenceGenerator()
-                }}><h3>MINT MOTIVATIONAL NFT</h3></button>
+                }}>MINT MOTIVATIONAL NFT</button>
               </div>
             </div>
+
+
+
+
             <div>
               {/* sentences */}
               <div classname="row text-center">
@@ -194,8 +188,8 @@ constructor(props){
           <div><br /></div>
             <Sample />
             <Home />
-          </div>
-        </div>
+            </div>         
+
       </div>
     </div>
     );

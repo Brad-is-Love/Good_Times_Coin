@@ -9,7 +9,7 @@ function Home(props) {
             <p>Get your 68 GTC by messaging u/goodtimesbradtimes on reddit*, with your ONE address. <br />
             Don't forget to add the token contract to your wallet to view the token and get the good times rollin'.
             <br /><br /><strong>Contract Address: </strong>
-            <p style={{ color: '#e01b84' }}> 0x6E85399c21A62D9dc555c2C9b46c4854dD2416c5</p> </p>
+            <p class="psmall"> 0x6E85399c21A62D9dc555c2C9b46c4854dD2416c5</p> </p>
             <p>*Your reddit account must've been created before September 18th 2021.</p>
             <br />
         <div>

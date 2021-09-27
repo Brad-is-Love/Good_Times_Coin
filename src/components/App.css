@@ -22,6 +22,22 @@ p {
   display: inline-block;
 }
 
+.sitebackground {
+  background-image: url('../GTC Full Logo.jpg');
+  background-repeat: repeat;
+  background-size: 5rem
+}
+
+.psmall {
+  font-size: small;
+}
+
+.backgroundoverlay{
+  background-color: aliceblue;
+  opacity: .55;
+}
+
+
 .banner {
   position: relative;
   text-align: center;

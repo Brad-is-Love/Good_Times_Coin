@@ -27,8 +27,9 @@ maxWidth: "940px"
 
             <h4>Move your mouse over the image to explore</h4>
                         
-            <ReactFlashlight size={75} darkness={0.95}>
+            
                 <div class="container" style={style}>
+                    <ReactFlashlight size={75} darkness={0.95}>
                     <div class="row bg-dark justify-content-center">
                         <img class="responsive m-3" src={logo} alt="test"/>
                         <img class="responsive m-3" src={logo2} alt="test"/>
@@ -38,9 +39,10 @@ maxWidth: "940px"
                         <img class="responsive m-3" src={logo6} alt="test"/>
                         <img class="responsive m-3" src={logo7} alt="test"/>
                         <img class="responsive m-3" src={logo9} alt="test"/>
-                    </div>                    
+                    </div> 
+                    </ReactFlashlight>                   
                 </div>
-            </ReactFlashlight>
+            
         </div>
         
     );
