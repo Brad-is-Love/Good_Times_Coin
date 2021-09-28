@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Web3 from 'web3'
 import './App.css';
 import Color from '../abis/Color.json'
-import logo from '../GTC Full Logo.jpg';
+// import logo from '../GTC Full Logo.jpg';
 import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
 // import {BrowserRouter as Router,  Switch,  Route,  Link} from "react-router-dom";
 import Nav from './Nav';
@@ -102,7 +102,7 @@ constructor(props){
       
         <div class="generalfont">
 
-        <div class="sitebackground p-5">
+        <div class="sitebackground">
         <Nav account={this.state.account}/>
         <br /><br />
           <div class="container border rounded bg-white mt-4 pt-2" >
