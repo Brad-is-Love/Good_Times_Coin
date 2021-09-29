@@ -14,7 +14,7 @@ import logo9 from "../Samples/GoodNFTimer_9.png";
 function Sample() {
 
 const style = {
-maxWidth: "940px" 
+
 }
 
     return (
@@ -27,21 +27,20 @@ maxWidth: "940px"
 
             <h4>Move your mouse over the image to explore</h4>
                         
-            
+            <ReactFlashlight size={75} darkness={0.95}>
                 <div class="container" style={style}>
-                    <ReactFlashlight size={75} darkness={0.95}>
                     <div class="row bg-dark justify-content-center">
-                        <img class="responsive m-3" src={logo} alt="test"/>
-                        <img class="responsive m-3" src={logo2} alt="test"/>
-                        <img class="responsive m-3" src={logo3} alt="test"/>
-                        <img class="responsive m-3" src={logo4} alt="test"/>
-                        <img class="responsive m-3" src={logo5} alt="test"/>
-                        <img class="responsive m-3" src={logo6} alt="test"/>
-                        <img class="responsive m-3" src={logo7} alt="test"/>
-                        <img class="responsive m-3" src={logo9} alt="test"/>
-                    </div> 
-                    </ReactFlashlight>                   
+                        <img class="responsive m-3 token" src={logo} alt="test"/>
+                        <img class="responsive m-3 token" src={logo2} alt="test"/>
+                        <img class="responsive m-3 token" src={logo3} alt="test"/>
+                        <img class="responsive m-3 token" src={logo4} alt="test"/>
+                        <img class="responsive m-3 token" src={logo5} alt="test"/>
+                        <img class="responsive m-3 token" src={logo6} alt="test"/>
+                        <img class="responsive m-3 token" src={logo7} alt="test"/>
+                        <img class="responsive m-3 token" src={logo9} alt="test"/>
+                    </div>     
                 </div>
+            </ReactFlashlight>               
             
         </div>
         

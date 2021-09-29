@@ -5,7 +5,7 @@ import Color from '../abis/Color.json'
 // import logo from '../GTC Full Logo.jpg';
 import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
 // import {BrowserRouter as Router,  Switch,  Route,  Link} from "react-router-dom";
-import Nav from './Nav';
+import Navtwo from './Navtwo';
 import Sample from './Sample';
 import Home from './Home';
 
@@ -103,7 +103,7 @@ constructor(props){
         <div class="generalfont">
 
         <div class="sitebackground">
-        <Nav account={this.state.account}/>
+        <Navtwo account={this.state.account}/>
         <br /><br />
           <div class="container border rounded bg-white mt-4 pt-2" >
            <div class="row  p-3">
