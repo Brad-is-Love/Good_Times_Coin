@@ -1,13 +1,19 @@
 import React from "react";
 import './App.css'
+import siteIcon from "../NFTIcon.png"
 
-function Home(props) {
+function Home() {
 
     return (
         <div>
+        <div class="row">
+            <div class="col">
+            <h1 class="sitetitle">Good Times Coin</h1>
+            </div>
+            <div class="col"><img class="float-right" src={siteIcon} alt="Good NF Timer" /></div>
             <p>Good times coin was deployed in Q3 2021 to address the chronic global shortage of good times.</p>
-            <p>Get your 68 GTC by messaging u/goodtimesbradtimes on reddit*, with your ONE address. <br />
-            Don't forget to add the token contract to your wallet to view the token and get the good times rollin'.
+            <br />
+            <p>Get your 68 GTC by messaging u/goodtimesbradtimes on reddit*, with your ONE address, then add the token contract to your wallet to view the token and get the good times rollin'.
             <br /><br /><strong>Contract Address: </strong>
             <p class="psmall"> 0x6E85399c21A62D9dc555c2C9b46c4854dD2416c5</p> </p>
             <p>*Your reddit account must've been created before September 18th 2021.</p>
@@ -21,7 +27,7 @@ function Home(props) {
             </ol>
         </div>
     </div>
-        
+</div>        
     );
   
 }

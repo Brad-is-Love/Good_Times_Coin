@@ -8,6 +8,7 @@ import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
 import Navtwo from './Navtwo';
 import Sample from './Sample';
 import Home from './Home';
+import About from './About.js';
 
 class App extends Component {
 
@@ -23,7 +24,7 @@ async componentWillMount(){
     } else if (window.web3) {
     window.web3 = new Web3(window.web3.currentprovider)
   } else{
-    window.alert('install MetaMask')
+    window.alert("There's awesome stuff on this site that only works with MetaMask, install it for full functionality")
     }
   }
 
@@ -59,7 +60,7 @@ async componentWillMount(){
       }
       } 
     } else {
-      window.alert('Smart contract not on this network')
+      window.alert("You're on the wrong network, friend. Get on Harmony Mainnet to see everything this site has to offer")
     }
   }
     mint = (color) => {
@@ -102,11 +103,15 @@ constructor(props){
       
         <div class="generalfont">
 
-        <div class="sitebackground">
+        <div class="sitebackground pl-2 pr-2">
         <Navtwo account={this.state.account}/>
+        <div class="text-end bg-white border rounded pb-1"><p class="psmall">Account: {this.state.account}</p></div>
         <br /><br />
-          <div class="container border rounded bg-white mt-4 pt-2" >
+          <div class="container border rounded border-danger bg-white mt-4 pt-2" >
            <div class="row  p-3">
+           <Home />
+           
+            
             {/* this is the main sentence site */}
               <div class="col-s-8">
                   <h1><em>Life Advice NFT Generator</em></h1>
@@ -133,6 +138,8 @@ constructor(props){
                     this.sentenceGenerator()
                 }}>MINT MOTIVATIONAL NFT</button>
               </div>
+              <br />
+              <p class="primary">{this.state.totalSupply} out of 6969 Minted</p>
             </div>
 
 
@@ -187,9 +194,9 @@ constructor(props){
             </div>
           <div><br /></div>
             <Sample />
-            <Home />
+            <About />
             </div>         
-
+            
       </div>
     </div>
     );

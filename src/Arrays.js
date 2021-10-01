@@ -6,7 +6,7 @@ export var firstPart = [
 "The central components of",
 "The most important ingredients of",
 "The key elements of",
-"Two simple tricks for"
+"The pillars of"
 ];
 
 export var secondPart = [
@@ -45,7 +45,7 @@ export var thirdPart = [
 'Ecstasy',
 'regular exercise',
 'self-medication',
-'good old-fashioned elbow grease',
+'elbow grease',
 'the "withdrawal method"',
 'Twitter',
 'Ivermectin',

@@ -7,12 +7,18 @@ font-family: 'Aclonica', sans-serif;
   font-family: 'Carme', sans-serif;
 }
 
+.sitetitle{
+ font-family: 'Hi Melody', cursive;
+ font-size: 7vw;
+ color: rgb(0, 163, 232)
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lemonada', cursive;
 }
 
 p {
-  font-size: larger;
+  font-size: large;
 }
 
 .token {
@@ -23,7 +29,7 @@ p {
 .sitebackground {
   background-image: url('../GTC Full Logo.jpg');
   background-repeat: repeat;
-  background-size: 5rem
+  background-size: 7vw
 }
 
 .psmall {
