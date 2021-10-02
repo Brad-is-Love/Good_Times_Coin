@@ -13,12 +13,45 @@ font-family: 'Aclonica', sans-serif;
  color: rgb(0, 163, 232)
 }
 
+.headings{
+  font-family: 'Hi Melody', cursive;
+ font-size:40px;
+ color: rgb(0, 163, 232)
+}
+
+.buttonText{
+  font-family: 'Hi Melody', cursive;
+  font-size: xx-large;
+  color: white;
+  background-color: rgb(0, 163, 232);
+  border:rgb(0, 163, 232);
+}
+
+.buttonText:hover{
+  background-color:rgb(220, 53, 69);
+  color: white;
+}
+
+
+.special{
+    font-family: 'Hi Melody', cursive;
+    color: rgb(220, 53, 69);
+    font-size: 35px;
+}
+
+.specialMobile{
+    font-family: 'Hi Melody', cursive;
+    color: rgb(220, 53, 69);
+    font-size: 20px;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lemonada', cursive;
 }
 
 p {
-  font-size: large;
+  font-size: medium;
 }
 
 .token {
@@ -27,13 +60,22 @@ p {
 }
 
 .sitebackground {
-  background-image: url('../GTC Full Logo.jpg');
+  /* background-image: url('../GTC Full Logo.jpg'); */
+  background-image: url('../logo2.png');
+  background-color: rgb(0, 163, 232);
   background-repeat: repeat;
-  background-size: 7vw
+  background-size: 6vw
+}
+.sitebackgroundMobile {
+  /* background-image: url('../GTC Full Logo.jpg'); */
+  background-image: url('../logo2.png');
+  background-color: rgb(0, 163, 232);
+  background-repeat: repeat;
+  background-size: 8vw
 }
 
 .psmall {
-  font-size: small;
+  font-size: 3vw;
 }
 
 .backgroundoverlay{
@@ -41,28 +83,6 @@ p {
   opacity: .55;
 }
 
-
-.banner {
-  position: relative;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-.banner .content {
-  display: block;
-  position: absolute; /* Position the background text */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgb(0, 0, 0); /* Fallback color*/
-  background: rgba(0, 0, 0, 0.5); /*Black background with 0.5 opacity */
-  color: #f1f1f1; /* Grey text */
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-}
 
 .mintNFT {
   display: block;
@@ -72,19 +92,6 @@ p {
   padding: 10px;
 }
 
-
-
-
-
-.everything
-{
-  position: relative; /* Position the background text */
-  left: 50%;
-  width: 70%;
-  transform: translate(-50%);
-  padding: 10px;
-  border: #e01b84;  
-}
 
 .faded
 {

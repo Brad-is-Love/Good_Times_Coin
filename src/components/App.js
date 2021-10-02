@@ -44,7 +44,7 @@ async componentWillMount(){
       const totalSupply = await contract.methods.totalSupply().call()
       this.setState({ totalSupply })
       // Load Colors
-      if(totalSupply<2){
+      if(totalSupply<4){
       for (var i = 1; i <= totalSupply; i++) {
         const color = await contract.methods.colors(i - 1).call()
         this.setState({
@@ -52,7 +52,7 @@ async componentWillMount(){
         })
       }
     } else {
-        for (var j = totalSupply-2; j <= totalSupply; j++) {
+        for (var j = totalSupply-3; j <= totalSupply; j++) {
         const color = await contract.methods.colors(j - 1).call()
         this.setState({
           colors: [...this.state.colors, color]
@@ -102,26 +102,27 @@ constructor(props){
     return (
       
         <div class="generalfont">
+          <Navtwo />
+          <div class="bg-white d-lg-none d-xl-none d-md-none text-end"><p class="psmall">Account: {this.state.account}</p></div>
+          <div class="bg-white d-none d-lg-block d-xl-block d-md-block text-end"><p class="font-size: 2rem">Account: {this.state.account}</p></div>
 
-        <div class="sitebackground pl-2 pr-2">
-        <Navtwo account={this.state.account}/>
-        <div class="text-end bg-white border rounded pb-1"><p class="psmall">Account: {this.state.account}</p></div>
-        <br /><br />
-          <div class="container border rounded border-danger bg-white mt-4 pt-2" >
-           <div class="row  p-3">
+        <div class="sitebackground pr-4 pl-4">
+       
+                <br /><br />
+          <div class="container rounded shadow-lg bg-white mt-2 pt-2 px-4" >
+           <div class="row p-3">
            <Home />
            
             
             {/* this is the main sentence site */}
               <div class="col-s-8">
-                  <h1><em>Life Advice NFT Generator</em></h1>
+                  <h1 class="headings">Life Advice NFT Generator</h1>
                 {/* Most NFT images are stored off-chain on a service like&nbsp;
                 <a href="https://ipfs.io/" target="_blank" rel="noopener noreferrer">IPFS</a>&nbsp;
                 with just the URI stored in the on the blockchain itself and there's nothing <em>wrong</em> with that, 
                 but what if you want a fully on-chain NFT? <br />  */}
-                <br />
-                <p class="font-size: 2rem">We all want good times, but sometimes we just don't know <em> how</em>. <br />
-                  <br /> This sophisticated algorithm generates life advice, guaranteed to bring you good times.
+                <p>We all want good times, but sometimes we just don't know <em> how</em>. <br />
+                  <br /> This sophisticated algorithm generates accurate and relevant life advice, guaranteed to bring you good times.
                 <br />Mint yourself a <strong> free</strong> NFT on the Harmony Network! </p>
                 {/* If you want to go deeper, copy your ONE address and head to the 
                 <a href="https://explorer.harmony.one/" target="_blank" rel="noopener noreferrer">block explorer</a>,
@@ -132,14 +133,14 @@ constructor(props){
                 {/* <h2>I'm not, like, a <em>qualified</em> counsellor, but...</h2> */}
               </div>
               {/* Button */}
-              <div class="col-s-4 p-4">
-                <button class="btn btn-success btn-lg" onClick={(event)=>{
+              <div class="text-center mt-5 my-2">
+                <button class="btn btn-large shadow-sm buttonText"  onClick={(event)=>{
                     event.preventDefault()
                     this.sentenceGenerator()
-                }}>MINT MOTIVATIONAL NFT</button>
+                }}>Mint Motivational NFT</button>
               </div>
               <br />
-              <p class="primary">{this.state.totalSupply} out of 6969 Minted</p>
+              <p class="primary text-center my-2">{this.state.totalSupply} out of 6969 Minted</p>
             </div>
 
 

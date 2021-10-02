@@ -47,6 +47,18 @@ module.exports = {
       },
       network_id: 1666700000,
     },
+    
+    mainnet: {
+      provider: () => {
+        return new HDWalletProvider({
+          mnemonic,
+          providerOrUrl: 'https://api.s0.t.hmny.io', // https://api.s0.t.hmny.io for mainnet
+          derivationPath: `m/44'/1023'/0'/0/`
+        });
+      },
+      network_id: 1666600000, // 1666600000 for mainnet
+    },
+
   },
 };
 

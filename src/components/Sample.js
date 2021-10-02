@@ -21,8 +21,15 @@ const style = {
         <div>
 
             <p class="font-size: 2rem"><strong>Coming soon...</strong></p>
-            <h1><em>Good NF Timers</em></h1>
-            <p class="font-size: 2rem">4269 Unique Collectibles on a 420x69 Pixel Canvas</p>
+            <h1 class="headings">Good NF Timers</h1>
+            <p class="special">4269 Unique Collectibles on a 420x69 Pixel Canvas</p>
+            <br />
+            <p>
+                Good NF Timers is the first Good Times Coin artistic collectible. <br />
+                The first 420 wallets to hold GTC will receive an airdropped NFT from the Good NF Timers collection. <br /><br />
+                You'll get 10% off future GTC shop purchases for every Good NF Timer you hold, up to a maximum of 69% off. <br />
+                Disclaimer: I'm only 90% sure I can figure out how to do this.                           
+            </p>    
             <br />
 
             <h4>Move your mouse over the image to explore</h4>
