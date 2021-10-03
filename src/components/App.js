@@ -25,6 +25,7 @@ async componentWillMount(){
     window.web3 = new Web3(window.web3.currentprovider)
   } else{
     window.alert("There's awesome stuff on this site that only works with MetaMask, install it for full functionality")
+    // Set up a function here that either outputs the button or outputs the error message
     }
   }
 
@@ -61,6 +62,7 @@ async componentWillMount(){
       } 
     } else {
       window.alert("You're on the wrong network, friend. Get on Harmony Mainnet to see everything this site has to offer")
+      // Set up a function here that either outputs the button or outputs the error message
     }
   }
     mint = (color) => {
