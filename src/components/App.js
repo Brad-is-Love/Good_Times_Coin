@@ -9,7 +9,7 @@ import Sample from './Sample';
 import Home from './Home';
 import About from './About.js';
 //import NetworkError from './NetworkError';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route} from 'react-router-dom';
 import LifeAdvice from './LifeAdvice';
 import siteIcon from "../NFTIcon.png"
 
@@ -127,13 +127,13 @@ constructor(props){
               </div>
               <div class="col ml-auto"><img class="float-right pr-2 pt-2" src={siteIcon} alt="Good NF Timer" /></div>
               </div>
-              <Switch>  
+              {/* <Switch>   */}
                 <Route path = "/" component={Home} exact/>
                 <Route path = "/home" component={Home} exact/>
                 <Route path = "/sample" component={Sample} exact/>
                 <Route path = "/about" component={About} exact/>
                 <Route path = "/life-advice" component={LifeAdvice} exact/>
-              </Switch>
+              {/* </Switch> */}
               
             </div>
           </div>

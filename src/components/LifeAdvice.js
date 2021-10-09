@@ -4,7 +4,7 @@ import './App.css';
 import Color from '../abis/Color.json'
 // import logo from '../GTC Full Logo.jpg';
 import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
-import NetworkError from './NetworkError';
+
 class LifeAdvice extends Component {
 
 async componentWillMount(){
@@ -20,9 +20,6 @@ async componentWillMount(){
     window.web3 = new Web3(window.web3.currentprovider)
   } else{
     window.alert("There's awesome stuff on this site that only works with MetaMask, install it for full functionality")
-    // Set up a function here that either outputs the button or outputs the error message
-    const networkError = "noMask"
-    this.setState({ networkError })
     }
   }
 
@@ -39,6 +36,7 @@ async componentWillMount(){
       const address = networkData.address
       const contract = new web3.eth.Contract(abi, address)
       this.setState({ contract })
+
       const totalSupply = await contract.methods.totalSupply().call()
       this.setState({ totalSupply })
       // Load Colors
@@ -60,8 +58,6 @@ async componentWillMount(){
     } else {
       window.alert("You're on the wrong network, friend. Get on Harmony Mainnet to see everything this site has to offer")
       // Set up a function here that either outputs the button or outputs the error message
-      const networkError = "noMask"
-      this.setState({ networkError })
     }
   }
     mint = (color) => {
@@ -95,7 +91,6 @@ constructor(props){
     contract: null,
     totalSupply: 0,
     colors: [],
-    networkError: '',
     }
 
   }
@@ -132,7 +127,6 @@ constructor(props){
 
       <div>
         <div classname="row text-center">
-          <NetworkError networkError={this.state.networkError}/>
           {this.state.colors.slice(-1).reverse().map((color, key) => {
             return(
             <div key={key}>
