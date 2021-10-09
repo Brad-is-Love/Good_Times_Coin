@@ -4,11 +4,14 @@ import './App.css';
 import Color from '../abis/Color.json'
 // import logo from '../GTC Full Logo.jpg';
 import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
-// import {BrowserRouter as Router,  Switch,  Route,  Link} from "react-router-dom";
 import Navtwo from './Navtwo';
 import Sample from './Sample';
 import Home from './Home';
 import About from './About.js';
+//import NetworkError from './NetworkError';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import LifeAdvice from './LifeAdvice';
+import siteIcon from "../NFTIcon.png"
 
 class App extends Component {
 
@@ -26,6 +29,8 @@ async componentWillMount(){
   } else{
     window.alert("There's awesome stuff on this site that only works with MetaMask, install it for full functionality")
     // Set up a function here that either outputs the button or outputs the error message
+    const networkError = "noMask"
+    this.setState({ networkError })
     }
   }
 
@@ -63,13 +68,15 @@ async componentWillMount(){
     } else {
       window.alert("You're on the wrong network, friend. Get on Harmony Mainnet to see everything this site has to offer")
       // Set up a function here that either outputs the button or outputs the error message
+      const networkError = "noMask"
+      this.setState({ networkError })
     }
   }
     mint = (color) => {
     this.state.contract.methods.mint(color).send({ from: this.state.account })
     .once('receipt', (receipt) => {
       this.setState({
-        colors: [...this.state.colors, color]
+        colors: [...this.state.colors, color]   
       })
     })
     }
@@ -95,113 +102,44 @@ constructor(props){
     account: '',
     contract: null,
     totalSupply: 0,
-    colors: []
+    colors: [],
+    networkError: '',
     }
+
   }
 
 
   render() {
     return (
-      
+     <BrowserRouter>
         <div class="generalfont">
           <Navtwo />
           <div class="bg-white d-lg-none d-xl-none d-md-none text-end"><p class="psmall">Account: {this.state.account}</p></div>
           <div class="bg-white d-none d-lg-block d-xl-block d-md-block text-end"><p class="font-size: 2rem">Account: {this.state.account}</p></div>
 
-        <div class="sitebackground pr-4 pl-4">
-       
-                <br /><br />
-          <div class="container rounded shadow-lg bg-white mt-2 pt-2 px-4" >
-           <div class="row p-3">
-           <Home />
-           
-            
-            {/* this is the main sentence site */}
-              <div class="col-s-8">
-                  <h1 class="headings">Life Advice NFT Generator</h1>
-                {/* Most NFT images are stored off-chain on a service like&nbsp;
-                <a href="https://ipfs.io/" target="_blank" rel="noopener noreferrer">IPFS</a>&nbsp;
-                with just the URI stored in the on the blockchain itself and there's nothing <em>wrong</em> with that, 
-                but what if you want a fully on-chain NFT? <br />  */}
-                <p>We all want good times, but sometimes we just don't know <em> how</em>. <br />
-                  <br /> This sophisticated algorithm generates accurate and relevant life advice, guaranteed to bring you good times.
-                <br />Mint yourself a <strong> free</strong> NFT on the Harmony Network! </p>
-                {/* If you want to go deeper, copy your ONE address and head to the 
-                <a href="https://explorer.harmony.one/" target="_blank" rel="noopener noreferrer">block explorer</a>,
-                paste your address and click on the transaction hash of your last transaction. Then scroll down, copy the
-                code from the "input" field, paste it into this <a href="https://www.duplichecker.com/hex-to-text.php" target="_blank" rel="noopener noreferrer">hex to text converter</a>,
-                remove the 0x from the start and convert it. There is your NFT text straight from the ch-zain! */}
-
-                {/* <h2>I'm not, like, a <em>qualified</em> counsellor, but...</h2> */}
+          <div class="sitebackground pr-4 pl-4">
+        
+                  <br /><br />
+            <div class="container rounded shadow-lg bg-white mt-2 pt-2 px-4" >
+              <div class="row">
+              <div class="col">
+              <h1 class="sitetitle">Good Times Coin</h1>
               </div>
-              {/* Button */}
-              <div class="text-center mt-5 my-2">
-                <button class="btn btn-large shadow-sm buttonText"  onClick={(event)=>{
-                    event.preventDefault()
-                    this.sentenceGenerator()
-                }}>Mint Motivational NFT</button>
+              <div class="col ml-auto"><img class="float-right pr-2 pt-2" src={siteIcon} alt="Good NF Timer" /></div>
               </div>
-              <br />
-              <p class="primary text-center my-2">{this.state.totalSupply} out of 6969 Minted</p>
+              <Switch>  
+                <Route path = "/" component={Home} exact/>
+                <Route path = "/home" component={Home} exact/>
+                <Route path = "/sample" component={Sample} exact/>
+                <Route path = "/about" component={About} exact/>
+                <Route path = "/life-advice" component={LifeAdvice} exact/>
+              </Switch>
+              
             </div>
+          </div>
+        </div>
 
-
-
-
-            <div>
-              {/* sentences */}
-              <div classname="row text-center">
-                {this.state.colors.slice(-1).reverse().map((color, key) => {
-                  return(
-                  <div key={key}>
-                    <div class="row justify-content-around">
-                      <div class="border rounded p-3 bg-light bg-gradient">
-                        <center><h4>{color}</h4></center>
-                      </div>
-                    </div>
-                  </div>
-                  )
-                })}
-                </div>
-                <br />
-                <div classname="row text-center">
-                {this.state.colors.slice(-2,-1).reverse().map((color, key) => {
-                  return(
-                  <div key={key}>
-                    <div class="row justify-content-around faded">
-                      <div class="border rounded p-3 bg-light bg-gradient">
-                        <center><h4>{color}</h4></center>
-                      </div>
-                    </div>
-                  </div>
-                  )
-                })}
-                </div>
-                <br />
-                <div classname="row text-center">
-                {this.state.colors.slice(-3,-2).reverse().map((color, key) => {
-                  return(
-                  <div key={key}>
-                    <div class="row justify-content-around moreFaded">
-                      <div class="border rounded p-3 bg-light bg-gradient">
-                        <center><h4>{color}</h4></center>
-                      </div>
-                    </div>
-                  </div>
-                  )
-                })}
-                </div>
-                <br />
-                <hr />
-                <br />
-            </div>
-          <div><br /></div>
-            <Sample />
-            <About />
-            </div>         
-            
-      </div>
-    </div>
+    </BrowserRouter>
     );
   }
 }

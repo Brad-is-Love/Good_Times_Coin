@@ -6,8 +6,8 @@ function About() {
     return(
         <div>
             <br />
-            <h1 class="headings">About</h1> 
-            <h4>Good Times Coin:</h4> 
+            <h1 class="special">About</h1> 
+            <h4 class="headings">Good Times Coin:</h4> 
             When I was a kid my mum joked: “Hard work pays off in the future, but laziness pays off now!”
 <br /> <br />
             I thought: What if we always made ourselves happy right now?
@@ -21,7 +21,7 @@ function About() {
 <br /> <br />
             The power is YOURS!
 <br /><br />
-            <h4>The "Team"</h4>
+            <h4 class="headings">The "Team"</h4>
             I’m Brad, AKA u/goodtimesbradtimes. I am the GTC team.
             <br /><br />
             I bought my first little piece of Bitcoin as a secret santa gift in about 2016 

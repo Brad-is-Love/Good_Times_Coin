@@ -21,8 +21,8 @@ const style = {
         <div>
 
             <p class="font-size: 2rem"><strong>Coming soon...</strong></p>
-            <h1 class="headings">Good NF Timers</h1>
-            <p class="special">4269 Unique Collectibles on a 420x69 Pixel Canvas</p>
+            <p class="special">Good NF Timers</p>
+            <p class="headings">4269 Unique Collectibles on a 420x69 Pixel Canvas</p>
             <br />
             <p>
                 Good NF Timers is the first Good Times Coin artistic collectible. <br />
