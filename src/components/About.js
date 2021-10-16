@@ -31,7 +31,7 @@ function About() {
             I fell in love with Harmony's functionality and community, learned to slap code together, 
             and created Good Times Coin; a way to combine my love of good times with my love of cryptocurrency.
 <br /> <br />
-            I hope you have as many Good Times using GTC as I had creating it.
+            I hope you have as many Good Times using GTC as I had creating it!
 <br /><br />
             Brad
 <br /> <br />

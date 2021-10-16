@@ -12,6 +12,7 @@ import About from './About.js';
 import { BrowserRouter, Route} from 'react-router-dom';
 import LifeAdvice from './LifeAdvice';
 import siteIcon from "../NFTIcon.png"
+import Roadmap from './RoadMap';
 
 class App extends Component {
 
@@ -122,9 +123,10 @@ constructor(props){
               {/* <Switch>   */}
                 <Route path = "/" component={Home} exact/>
                 <Route path = "/home" component={Home} exact/>
-                <Route path = "/sample" component={Sample} exact/>
+                <Route path = "/good-nf-timers" component={Sample} exact/>
                 <Route path = "/about" component={About} exact/>
                 <Route path = "/life-advice" component={LifeAdvice} exact/>
+                <Route path = "/roadmap" component={Roadmap} exact/>
               {/* </Switch> */}
               
             </div>

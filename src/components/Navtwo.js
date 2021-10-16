@@ -20,7 +20,10 @@ function Navtwo(props) {
           <Link class="nav-link" to="/life-advice">Life Advice NFTs</Link>
         </li>
         <li class="nav-item">
-           <Link class="nav-link" to="/sample">Good NF Timers</Link>
+           <Link class="nav-link" to="/good-nf-timers">Good NF Timers</Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/roadmap">Roadmap</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/about">About</Link>

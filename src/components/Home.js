@@ -3,6 +3,7 @@ import About from "./About";
 import './App.css'
 import LifeAdvice from "./LifeAdvice";
 import Sample from "./Sample";
+import Roadmap from "./RoadMap";
 
 function Home() {
 
@@ -35,6 +36,7 @@ function Home() {
     </div>
     <LifeAdvice/>
     <Sample/>
+    <Roadmap/>
     <About/>
 </div>        
     );

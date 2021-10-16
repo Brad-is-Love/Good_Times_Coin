@@ -18,7 +18,7 @@ const style = {
 }
 
     return (
-        <div>
+        <div class="row pb-5 px-2">
 
             <p class="font-size: 2rem"><strong>Coming soon...</strong></p>
             <p class="special">Good NF Timers</p>
