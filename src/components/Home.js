@@ -16,7 +16,7 @@ function Home() {
             
             <br />
             <hr />
-            <p class="text-center px-5" >
+            <p class="text-center" >
                 Get your&nbsp;<strong>free 68 GTC</strong> by messaging &nbsp;<a href="https://www.reddit.com/user/GoodTimesBradTimes" target="_blank" rel="noopener noreferrer">GoodTimesBradTimes</a> on reddit and get the good times rollin! <br />
                 *your reddit account must've been created before September 18
             </p>
