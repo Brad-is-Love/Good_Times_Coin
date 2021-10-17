@@ -17,7 +17,7 @@ function Home() {
             <br />
             <hr />
             <p class="text-center px-5" >
-                Get your&nbsp;<strong>free 68 GTC</strong> by messaging&nbsp;<a href="https://www.reddit.com/user/GoodTimesBradTimes" target="_blank" rel="noopener noreferrer">GoodTimesBradTimes</a> on reddit and get the good times rollin! <br />
+                Get your&nbsp;<strong>free 68 GTC</strong> by messaging &nbsp;<a href="https://www.reddit.com/user/GoodTimesBradTimes" target="_blank" rel="noopener noreferrer">GoodTimesBradTimes</a> on reddit and get the good times rollin! <br />
                 *your reddit account must've been created before September 18
             </p>
             <hr /><br />
@@ -26,7 +26,7 @@ function Home() {
                     <div class="col-lg col-md-12 border rounded m-3 p-3">
                         <p class="text-justify">
                             Good Times Coin is currently in the distribution phase. Where 68GTC is given to 1000 people via reddit. 
-                            Check out the&nbsp;<a href="https://drive.google.com/file/d/1mGGZ02D6ULzOyikbOTPXzgC7BgJXjwBm/view?usp=sharing" target="_blank" rel="noopener noreferrer">whitepaper</a> for more info.
+                            Check out the <a href="https://drive.google.com/file/d/1mGGZ02D6ULzOyikbOTPXzgC7BgJXjwBm/view?usp=sharing" target="_blank" rel="noopener noreferrer">whitepaper</a> for more info.
                         </p>
                     </div>
                     <div class="col-lg col-md-12 border rounded m-3 p-3">
