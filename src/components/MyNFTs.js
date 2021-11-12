@@ -71,7 +71,11 @@ constructor(props){
 
   render() {
     return (
-        <div>I have: {this.state.balance} NFTs
+        <div>
+          <p class="specialMobile d-lg-none d-xl-none d-md-none">My NFT Inventory</p>
+            <p class="special d-none d-lg-block d-xl-block d-md-block">My NFT Inventory</p>
+            
+          These {this.state.balance} Life Advice NFTs guide me through:
         <br />
 
         <div classname="row text-center">
