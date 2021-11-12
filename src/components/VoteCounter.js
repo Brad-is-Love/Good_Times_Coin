@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Web3 from 'web3'
 import './App.css';
-import Color from '../abis/Color.json'
+import Voting from '../abis/Color.json'
 
-class MyNFTs extends Component {
+class VoteCounter extends Component {
         
     async componentWillMount(){
     await this.loadWeb3()
@@ -28,16 +28,16 @@ class MyNFTs extends Component {
         this.setState({ account: accounts[0] })
 
         const networkId = await web3.eth.net.getId()
-        const networkData = Color.networks[networkId]
+        const networkData = Voting.networks[networkId]
         if(networkData) {
-        const abi = Color.abi
+        const abi = Voting.abi
         const address = networkData.address
         const contract = new web3.eth.Contract(abi, address)
         this.setState({ contract })
 
         const totalSupply = await contract.methods.totalSupply().call()
         this.setState({ totalSupply })
-        //Check for existing NFTS
+        //Check for existing votes
 
         let balance = await contract.methods.balanceOf(accounts[0]).call()
         this.setState({balance})
@@ -95,4 +95,4 @@ constructor(props){
   }
 }
 
-export default MyNFTs
+export default VoteCounter

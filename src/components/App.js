@@ -13,6 +13,7 @@ import { BrowserRouter, Route} from 'react-router-dom';
 import LifeAdvice from './LifeAdvice';
 import siteIcon from "../NFTIcon.png"
 import Roadmap from './RoadMap';
+import MyNFTs from './MyNFTs';
 
 class App extends Component {
 
@@ -110,7 +111,7 @@ constructor(props){
           <div class="bg-white d-lg-none d-xl-none d-md-none text-end"><p class="psmall">Account: {this.state.account}</p></div>
           <div class="bg-white d-none d-lg-block d-xl-block d-md-block text-end"><p class="font-size: 2rem">Account: {this.state.account}</p></div>
 
-          <div class="sitebackground pr-4 pl-4">
+          <div class="sitebackground pr-4 pl-4 pb-5">
         
                   <br /><br />
             <div class="container rounded shadow-lg bg-white mt-2 pt-2 px-4" >
@@ -127,6 +128,7 @@ constructor(props){
                 <Route path = "/about" component={About} exact/>
                 <Route path = "/life-advice" component={LifeAdvice} exact/>
                 <Route path = "/roadmap" component={Roadmap} exact/>
+                <Route path = "/mynfts" component={MyNFTs} exact/>
               {/* </Switch> */}
               
             </div>
