@@ -1,19 +1,27 @@
-pragma solidity ^0.5.0;
+pragma solidity >=0.7.0 <0.9.0;
 
-import "./ERC721Full.sol";
+contract VotingForComp{
 
-contract Voting is ERC721Full{
-    string [] public votes;
-    mapping(string => bool) _voteExists;
+    uint256 option;
+    uint256[] votes;
+    mapping(address => bool) voted; 
+    // address public sender;
+    //     uint [] public votes;
 
-    constructor()ERC721Full("GNFT Community Votes", "GCV") public{
-
+    function vote(uint _option) public {
+        // uint [] public votes = votes.push(_option);
+        address sender = msg.sender;
+        require(!voted[sender],'Already Voted');
+        votes.push(_option);
+        voted[sender]=true;
     }
-
-  function mint(string memory _vote) public {
-    require(!_voteExists[_vote]);
-    uint _id = votes.push(_vote);
-    require(_id < 1001, "Contract Limit Reached");
-    _mint(msg.sender, _id);
-    voteExists[_vote] = true;
-}}
+    
+    function seeIfVoted() public view returns(bool){
+        address sender = msg.sender;
+        return voted[sender];
+    }
+    
+    function seeVotes() public view returns (uint[] memory) {
+        return votes;
+    }
+}

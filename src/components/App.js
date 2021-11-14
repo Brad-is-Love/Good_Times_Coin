@@ -14,6 +14,7 @@ import LifeAdvice from './LifeAdvice';
 import siteIcon from "../NFTIcon.png"
 import Roadmap from './RoadMap';
 import MyNFTs from './MyNFTs';
+import GTAC from './GTAC';
 
 class App extends Component {
 
@@ -129,6 +130,7 @@ constructor(props){
                 <Route path = "/life-advice" component={LifeAdvice} exact/>
                 <Route path = "/roadmap" component={Roadmap} exact/>
                 <Route path = "/mynfts" component={MyNFTs} exact/>
+                <Route path = "/GTAC" component={GTAC} exact/>
               {/* </Switch> */}
               
             </div>

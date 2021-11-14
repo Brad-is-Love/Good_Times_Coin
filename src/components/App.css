@@ -85,6 +85,10 @@ p {
   opacity: .55;
 }
 
+.flyer{
+  max-width: 500px;
+}
+
 
 .mintNFT {
   display: block;
