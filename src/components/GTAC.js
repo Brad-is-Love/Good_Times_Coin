@@ -19,10 +19,10 @@ function GTAC() {
             <br/> <br />
             <p>Email submissions to <a href="mailto: goodtimesbradtimes69420@gmail.com">goodtimesbradtimes69420@gmail.com</a></p>
 
-            <img class="flyer center pb-5" src={flyer} alt="Good Times Art Competition" />
+            <img class="flyer center pb-3" src={flyer} alt="Good Times Art Competition" />
+            <p>Sumissions close <strong>November 22nd 2021</strong>. Judging by community vote.</p>
             <br />
-            <p>Sumissions close November 22nd 2021</p>
-            <p>Judging by community vote.</p>
+            <br />
             <br />
 
         </div>
