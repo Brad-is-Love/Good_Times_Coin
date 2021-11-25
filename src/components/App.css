@@ -85,9 +85,17 @@ p {
   opacity: .55;
 }
 
-.flyer{
-  max-width: 500px;
-    display: block;
+.flyerV{
+  width: 69px;
+  height: 420px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flyerH{
+  width: 420px;
+  height: 69px;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }

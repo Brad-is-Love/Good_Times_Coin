@@ -33,6 +33,18 @@ const style = {
             <br />
 
             <h4>Move your mouse over the image to explore</h4>
+
+{/* <div className="video-responsive">
+    <iframe
+      width="853"
+      height="480"
+      src={`https://youtu.be/xOijUsH7hqg`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="Embedded youtube"
+    />
+  </div> */}
                         
             <ReactFlashlight size={75} darkness={0.95}>
                 <div class="container" style={style}>

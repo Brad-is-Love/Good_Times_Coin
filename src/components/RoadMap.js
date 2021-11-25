@@ -6,7 +6,7 @@ function Roadmap() {
             <h1 class="special">The Road to Good Times</h1>
             <br />
             <hr /> 
-            <p class="text-center">This is currently a one-man project. 73% of the GTC supply is still to be distributed, as per the 
+            <p class="text-center">This is currently a one-man project (plus a couple of casual helpers). 71% of the GTC supply is still to be distributed, as per the 
             <a href="https://drive.google.com/file/d/1mGGZ02D6ULzOyikbOTPXzgC7BgJXjwBm/view?usp=sharing" target="_blank" rel="noopener noreferrer"> Whitepaper</a>
           . <br />
                 <em>Also, I make no guarantees on anything. I don’t really know what I’m doing...</em>
