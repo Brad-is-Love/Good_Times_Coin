@@ -71,11 +71,11 @@ constructor(props){
     return (
         <div>
             <h1 class="special">Good Times Art Competition</h1> 
-            <div class="row px-5">
+            <div class="row px-2">
             
             <div class="justify-content-around text-center">
         <hr />
-            <p>Some of the best art from around the globe was submitted to The Good Times Art Competition.
+            <p>Some of the finest art from around the globe was submitted to The Good Times Art Competition.
                 There are 5 prizes including ONE and GTC. <br /> The winning pictures will be added to the upcoming <a href="/good-nf-timers"> Good NF Timers
                 NFT Collection.</a></p> <hr />
                 <br />
