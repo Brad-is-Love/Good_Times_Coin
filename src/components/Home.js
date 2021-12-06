@@ -4,6 +4,7 @@ import './App.css'
 import LifeAdvice from "./LifeAdvice";
 import Sample from "./Sample";
 import Roadmap from "./RoadMap";
+import GoodNFTimers from "./GoodNFTimers";
 
 function Home() {
 
@@ -36,14 +37,14 @@ function Home() {
                     </div>
                     <div class="col-lg col-md-12 border rounded m-3 p-3">
                         <p class="text-justify">
-                        The Good Times Coin NFT collection is coming soon. have a look at <a href="/good-nf-timers">Good NF Timers</a> and get ready for the airdrop!
+                        The Good Times Coin NFT collection has just launched! have a look at <a href="/good-nf-timers">Good NF Timers</a>!
                         </p>
                     </div>
             </div>
     </div>
     <br />
+    <GoodNFTimers/>
     <LifeAdvice/>
-    <Sample/>
     <Roadmap/>
     <About/>
 </div>        
