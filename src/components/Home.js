@@ -2,7 +2,6 @@ import React from "react";
 import About from "./About";
 import './App.css'
 import LifeAdvice from "./LifeAdvice";
-import Sample from "./Sample";
 import Roadmap from "./RoadMap";
 import GoodNFTimers from "./GoodNFTimers";
 
