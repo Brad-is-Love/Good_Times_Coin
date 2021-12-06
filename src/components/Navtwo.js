@@ -31,9 +31,6 @@ function Navtwo(props) {
         <li class="nav-item">
           <Link class="nav-link" to="/mynfts">My NFTs</Link>
         </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/gtac">Art Competition</Link>
-        </li>
 
       <li class="nav-item dropdown">
         <div class="dropdown">

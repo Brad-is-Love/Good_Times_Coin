@@ -1,4 +1,4 @@
-const Migrations = artifacts.require("VotingForComp");
+const Migrations = artifacts.require("GoodNFTimers");
 
 module.exports = function(deployer) {
   deployer.deploy(Migrations);

@@ -96,50 +96,50 @@ constructor(props){
                 <button class="btn"  onClick={(event)=>{
                     event.preventDefault()
                     this.vote(1)
-                    }}><img class="flyerV pb-3" src={entry1} alt="" />
+                    }}>1:<img class="flyerV pb-3" src={entry1} alt="" />
                 </button> 
             </div>
             <div class = "col-sm"> 
                 <button class="btn"  onClick={(event)=>{
                     event.preventDefault()
                     this.vote(3)
-                    }}><img class="flyerV pb-3" src={entry3} alt="" />
+                    }}>3:<img class="flyerV pb-3" src={entry3} alt="" />
                 </button>
             </div>
             <div class = "col-sm">
                 <button class="btn"  onClick={(event)=>{
                     event.preventDefault()
                     this.vote(2)
-                    }}><img class="flyerV pb-3" src={entry2} alt="" />
+                    }}>2:<img class="flyerV pb-3" src={entry2} alt="" />
                 </button>
             </div>
             <div class = "col-sm">
                 <button class="btn"  onClick={(event)=>{
                     event.preventDefault()
                     this.vote(4)
-                    }}><img class="flyerH center pb-3" src={entry4} alt="" />
+                    }}>4:<img class="flyerH center pb-3" src={entry4} alt="" />
                 </button>
             <br />
                 <button class="btn"  onClick={(event)=>{
                     event.preventDefault()
                     this.vote(5)
-                    }}><img class="flyerH center pb-3" src={entry5} alt="" />
+                    }}>5:<img class="flyerH center pb-3" src={entry5} alt="" />
                 </button>
             <br />
                 <button class="btn"  onClick={(event)=>{
                     event.preventDefault()
                     this.vote(6)
-                    }}><img class="flyerH center pb-3" src={entry6} alt="" />
+                    }}>6:<img class="flyerH center pb-3" src={entry6} alt="" />
                 </button>
             <br />
             </div>
             
          
-            {/* {this.state.votes.map((vote, key) => {
+           {this.state.votes.map((vote, key) => {
             return(
             <div key={key}>{vote}</div>
             )
-          })}   */}
+          })}   
 
         </div>
         </div>

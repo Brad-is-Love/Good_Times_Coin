@@ -5,7 +5,7 @@ import Color from '../abis/Color.json'
 // import logo from '../GTC Full Logo.jpg';
 import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
 import Navtwo from './Navtwo';
-import Sample from './Sample';
+// import Sample from './Sample';
 import Home from './Home';
 import About from './About.js';
 //import NetworkError from './NetworkError';
@@ -14,7 +14,7 @@ import LifeAdvice from './LifeAdvice';
 import siteIcon from "../NFTIcon.png"
 import Roadmap from './RoadMap';
 import MyNFTs from './MyNFTs';
-import GTAC from './GTAC';
+import GoodNFTimers from './GoodNFTimers';
 
 class App extends Component {
 
@@ -125,12 +125,12 @@ constructor(props){
               {/* <Switch>   */}
                 <Route path = "/" component={Home} exact/>
                 <Route path = "/home" component={Home} exact/>
-                <Route path = "/good-nf-timers" component={Sample} exact/>
+                <Route path = "/good-nf-timers" component={GoodNFTimers} exact/>
                 <Route path = "/about" component={About} exact/>
                 <Route path = "/life-advice" component={LifeAdvice} exact/>
                 <Route path = "/roadmap" component={Roadmap} exact/>
                 <Route path = "/mynfts" component={MyNFTs} exact/>
-                <Route path = "/GTAC" component={GTAC} exact/>
+                <Route path = "/GoodNFTimers" component={GoodNFTimers} exact/>
               {/* </Switch> */}
               
             </div>

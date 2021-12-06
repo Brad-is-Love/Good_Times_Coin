@@ -85,6 +85,14 @@ p {
   opacity: .55;
 }
 
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
 .flyerV{
   width: 69px;
   height: 420px;
