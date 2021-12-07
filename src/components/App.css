@@ -108,6 +108,13 @@ p {
   margin-right: auto;
 }
 
+.goodnft{
+  width: 100%;
+  /* border: solid 4px rgb(182, 0, 142);
+  background-color: rgb(0, 0, 0); */
+  padding: 10px;
+}
+
 
 .mintNFT {
   display: block;

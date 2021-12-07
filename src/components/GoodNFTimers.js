@@ -183,7 +183,7 @@ async connectToWeb3(){
             <div key={key}>
               <div class="row justify-content-around">
                 <div class="p-3">
-                  <center><img class="flyerH" src={NFT} alt="check" /></center>
+                  <center><img class="goodnft shadow" src={NFT} alt="check" /></center>
                 </div>
               </div>
             </div>

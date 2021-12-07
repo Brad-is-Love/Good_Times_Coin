@@ -113,8 +113,8 @@ constructor(props){
           {this.state.myGNFTs.map((myGNFT, key) => {
             return(
             <div key={key}>
-              <div class="row justify-content-around p-2">
-                  <center><img class="flyerH" src={myGNFT} alt="check" /></center>
+              <div class="row justify-content-around px-2 py-3">
+                  <center><img class="goodnft shadow" src={myGNFT} alt="check" /></center>
                 <br />
               </div>
             </div>
