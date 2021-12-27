@@ -7,95 +7,85 @@ import GoodNFT from '../abis/GoodNFTimers.json'
 class MyNFTs extends Component {
         
     async componentWillMount(){
-    await this.loadWeb3()
-    await this.loadBlockchainData()
+      if(this.props.account !== "Not Connected") {
+        await this.loadBlockchainData()
+      }
+    }
+
+    async componentDidUpdate (prevProps){
+      if(this.props.account !== prevProps.account){
+        await this.loadWeb3()
+        await this.loadBlockchainData()
+        console.log("MyNFTs Updated")
+      }
     }
 
     async loadWeb3() {
         if (window.ethereum){
         window.web3 = new Web3(window.ethereum)
-        await window.ethereum.enable()
         } else if (window.web3) {
         window.web3 = new Web3(window.web3.currentprovider)
-    } else{
-        window.alert("There's awesome stuff on this site that only works with MetaMask, install it for full functionality")
-        }
+      }
     }
 
     async loadBlockchainData() {
-        const web3 = window.web3
-        // Load account
-        const accounts = await web3.eth.getAccounts()
-        this.setState({ account: accounts[0] })
-                
+      const web3 = window.web3
+      const account = this.props.account        
+//My good NF timers:
+        const nftabi = GoodNFT.abi
         const networkId = await web3.eth.net.getId()
         const NFTNetwork = GoodNFT.networks[networkId]
+        if(NFTNetwork){
+          const nftaddress = NFTNetwork.address
+          const nftcontract = new web3.eth.Contract(nftabi, nftaddress)
+          this.setState({nftcontract})            
+          this.setState({nftaddress})
 
-//My good NF timers:
-      const nftabi = GoodNFT.abi
-      const nftaddress = NFTNetwork.address
-      const nftcontract = new web3.eth.Contract(nftabi, nftaddress)
-      this.setState({ nftcontract })            
-      this.setState({nftaddress})
+    //My life advice
+          const networkData = Color.networks[networkId]      
+          const abi = Color.abi
+          const address = networkData.address
+          const contract = new web3.eth.Contract(abi, address)
+          this.setState({ contract })
 
-//My life advice
+          //Check for existing NFTS
+          let balance = await contract.methods.balanceOf(account).call()
+          this.setState({balance})
+          for (var tokenId = 1; tokenId <=balance; tokenId++){
+                  let tokenIndex = await contract.methods.tokenOfOwnerByIndex(account,tokenId-1).call()
+                  let color = await contract.methods.colors(tokenIndex-1).call()
+                  this.setState({
+                  myTokens: [...this.state.myTokens, color]})
+          }
+          //GNFTs
+          let nftBalance = await nftcontract.methods.balanceOf(account).call()
+          this.setState({nftBalance})
 
-        const networkData = Color.networks[networkId]
-        if(networkData) {
-        const abi = Color.abi
-        const address = networkData.address
-        const contract = new web3.eth.Contract(abi, address)
-        this.setState({ contract })
-
-        const totalSupply = await contract.methods.totalSupply().call()
-        this.setState({ totalSupply })
-        //Check for existing NFTS
-
-        let balance = await contract.methods.balanceOf(accounts[0]).call()
-        this.setState({balance})
-        for (var tokenId = 1; tokenId <=balance; tokenId++){
-                let tokenIndex = await contract.methods.tokenOfOwnerByIndex(this.state.account,tokenId-1).call()
-                let color = await contract.methods.colors(tokenIndex-1).call()
-                this.setState({
-                myTokens: [...this.state.myTokens, color]})
+          for (var nftIndex = 1; nftIndex <= nftBalance; nftIndex++) {
+            let nftId = await nftcontract.methods.tokenOfOwnerByIndex(this.props.account,nftIndex-1).call()
+            const URI = await nftcontract.methods.tokenURI(nftId).call()
+              let response = await fetch(URI);
+              let responseJson = await response.json();
+              let imageData = await responseJson.image;
+              const NFT = 'https://gateway.pinata.cloud/ipfs/'+imageData.slice(7)
+              this.setState({
+                myGNFTs: [...this.state.myGNFTs, NFT]
+            })
+          } 
+      } else {
+        window.alert("wrong Netty")// Set up a function here that either outputs the button or outputs the error message
         }
-        //GNFTs
-        let nftBalance = await nftcontract.methods.balanceOf(accounts[0]).call()
-        this.setState({nftBalance})
-
-
-        for (var nftIndex = 1; nftIndex <= nftBalance; nftIndex++) {
-          let nftId = await nftcontract.methods.tokenOfOwnerByIndex(this.state.account,nftIndex-1).call()
-          const URI = await nftcontract.methods.tokenURI(nftId).call()
-            let response = await fetch(URI);
-            let responseJson = await response.json();
-            let imageData = await responseJson.image;
-            const NFT = 'https://gateway.pinata.cloud/ipfs/'+imageData.slice(7)
-            this.setState({
-              myGNFTs: [...this.state.myGNFTs, NFT]
-          })
-        }
-         
-        } else {
-        window.alert("You're on the wrong network, friend. Get on Harmony Mainnet to see everything this site has to offer")
-        // Set up a function here that either outputs the button or outputs the error message
-        }
-
-
-    }
+      }
 
 constructor(props){
   super(props)
   this.state = {
-    account: '',
     contract: null,
-    totalSupply: 0,
     color: '',
     myTokens: [],
     tokenIds: [],
     tokenIndexes: [],
     myGNFTs: [],
-
     }
 
   }

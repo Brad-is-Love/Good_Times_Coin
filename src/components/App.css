@@ -27,6 +27,16 @@ font-family: 'Aclonica', sans-serif;
   border:rgb(0, 163, 232);
 }
 
+.buttonDisabled{
+  font-family: 'Hi Melody', cursive;
+  font-size: xx-large;
+  color: rgb(117, 117, 117);
+  background-color: rgb(255, 255, 255);
+  border:rgb(192, 192, 192);
+  border-style: solid;
+  border-width: 1px;
+}
+
 .buttonText:hover{
   background-color:rgb(220, 53, 69);
   color: white;

@@ -4,13 +4,13 @@ import './App.css';
 import GoodNFT from '../abis/GoodNFTimers.json'
 import GTCLocal from '../abis/GTCLocal.json'
 import { holdersList } from '../Holders';
+import CustomButton from './CustomButton';
 
 class GoodNFTimers extends Component {
 
 constructor(props){
   super(props)
   this.state = {
-    account: 'Not Connected to MetaMask',
     contract: null,
     totalSupply: 0,
     NFTs: [],
@@ -18,47 +18,32 @@ constructor(props){
 
   }
 
+  async componentWillMount(){
+    if(this.props.account !== "Not Connected") {
+      await this.loadWeb3()
+      await this.loadBlockchainData()
+    }
+  }
 
-async componentWillMount(){
-  await this.loadWeb3()
-  await this.loadBlockchainData()
-}
-
-
-async connectToWeb3(){
-//await this.loadWeb3()
-//await this.loadBlockchainData()
-}
-
+  async componentDidUpdate (prevProps){
+    if(this.props.account !== prevProps.account){
+      await this.loadWeb3()
+      await this.loadBlockchainData()
+    }
+  }
 
   async loadWeb3() {
     if (window.ethereum){
       window.web3 = new Web3(window.ethereum)
-          const accounts = await window.ethereum.request({
-          method: "eth_requestAccounts"})
-          this.setState ({account: accounts[0]})
-
-          //, () => {console.log(this.state.account)}
-          // window.ethereum.on("accountsChanged", () => {
-          //   window.location.reload();
-          // });
-          
     } else if (window.web3) {
     window.web3 = new Web3(window.web3.currentprovider)
-  } else{
-    window.alert("There's awesome stuff on this site that only works with MetaMask, install it for full functionality")
     }
   }
 
   async loadBlockchainData() {
     const web3 = window.web3
-    // Load account
-    let accounts = await web3.eth.getAccounts()
-    this.setState({ account: accounts[0] })
-
     const networkId = await web3.eth.net.getId()
     const NFTNetwork = GoodNFT.networks[networkId]
- 
     if(NFTNetwork) {
       //NFT Smart contract
       const nftabi = GoodNFT.abi
@@ -91,16 +76,19 @@ async connectToWeb3(){
       }
 
     } else {
-      window.alert("You're on the wrong network, friend. Get on Harmony Mainnet to see everything this site has to offer")
+      window.alert("GNFT Get on Harmony Mainnet to see everything this site has to offer")
       // Set up a function here that either outputs the button or outputs the error message
     }
   }
 
     mint = () => {
-    this.state.nftcontract.methods.mint(this.state.account, 1).send({ 
-        from: this.state.account,
+    this.state.nftcontract.methods.mint(this.props.account, 1).send({ 
+        from: this.props.account,
         value: window.web3.utils.toWei((420).toString(), "ether") 
     })
+    // .once('receipt', (receipt) => {
+    //   this.getNextToken()
+    // })
   }
 
   
@@ -119,37 +107,38 @@ async connectToWeb3(){
 
     payGTC = () => {
       this.state.GTCContract.methods.approve(this.state.nftaddress, window.web3.utils.toWei((6.9).toString())).send({ 
-        from: this.state.account})
+        from: this.props.account})
         .once('receipt', (receipt) => {
           this.state.nftcontract.methods.GTCmint(
-            this.state.account,
-            "1").send({from: this.state.account})
-    })
-  }
+            this.props.account,
+            "1").send({from: this.props.account})
+        })
+    }
 
   withdrawGTC = () => {
-    this.state.nftcontract.methods.withdrawGTC().send({from: this.state.account})
+    this.state.nftcontract.methods.withdrawGTC().send({from: this.props.account})
   }
   withdrawONE = () => {
-    this.state.nftcontract.methods.withdrawONE().send({from: this.state.account})
+    this.state.nftcontract.methods.withdrawONE().send({from: this.props.account})
   }
 
   mintToHolders() {
     for (var h = 0; h <= holdersList.length; h++){
       console.log()
       this.state.nftcontract.methods.mint(holdersList[h], 1).send({ 
-        from: this.state.account}) 
+        from: this.props.account}) 
     }
   }
 
 
   render() {
+    
     return (
       <div>
       <div class="row px-3">
       {/* this is the main sentence site */}
         <div class="col-s-8 ">
-          <p class="special">Good NF Timers Generator</p>
+          <p class="special">Good NF Timers</p>
            </div>
            
         <p class="primary text-center"> <hr/><strong>Mint yourself a beautiful, 420x69 pixel, Good NF Timer.</strong>
@@ -159,16 +148,8 @@ async connectToWeb3(){
         {/* Button */}
         <div class="text-center mt-3 my-2">
           <p>There are two ways to mint: Pay 6.9GTC, or hold onto it and pay with ONE</p>
-          <button class="btn btn-large shadow-sm buttonText mx-3"  onClick={(event)=>{
-              event.preventDefault()
-              this.mint()
-          }}>Pay 420 ONE to mint
-          </button>
-          <button class="btn btn-large shadow-sm buttonText mx-3"  onClick={(event)=>{
-              event.preventDefault()
-              this.payGTC()
-          }}>Pay 6.9 GTC to mint
-          </button>
+          <CustomButton buttonText = "Pay 420 ONE to Mint" buttonFunction = {this.mint} account = {this.props.account} />
+          <CustomButton buttonText = "Pay 6.9GTC to Mint" buttonFunction = {this.payGTC} account = {this.props.account} />
         </div>
         <br />
         <p class="primary text-center my-2">{this.state.totalSupply} out of 4269 Minted</p>
@@ -194,19 +175,16 @@ async connectToWeb3(){
           <br />
 
           {/* admin functions (to be moved) */}
+            
             {/* <button class="btn btn-large shadow-sm buttonText mx-2"  onClick={(event)=>{
-                event.preventDefault()
-                this.mintToHolders()
-            }}>Airdrop</button>
-            <button class="btn btn-large shadow-sm buttonText mx-2"  onClick={(event)=>{
                 event.preventDefault()
                 this.withdrawGTC()
             }}>Withdraw GTC</button>
             <button class="btn btn-large shadow-sm buttonText mx-2"  onClick={(event)=>{
                 event.preventDefault()
                 this.withdrawONE()
-            }}>Withdraw ONE</button>
-           */}
+            }}>Withdraw ONE</button> */}
+          
       <div class="row p-3">
        
         </div>

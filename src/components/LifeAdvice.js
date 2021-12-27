@@ -4,31 +4,34 @@ import './App.css';
 import Color from '../abis/Color.json'
 // import logo from '../GTC Full Logo.jpg';
 import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
+import CustomButton from './CustomButton';
 
 class LifeAdvice extends Component {
 
 async componentWillMount(){
-  await this.loadWeb3()
-  await this.loadBlockchainData()
+  if(this.props.account !== "Not Connected") {
+    await this.loadWeb3()
+    await this.loadBlockchainData()
+  }
 }
+
+async componentDidUpdate (prevProps){
+      if(this.props.account !== prevProps.account){
+        await this.loadBlockchainData()
+        console.log("Life advice Updated")
+      }
+    }
 
   async loadWeb3() {
     if (window.ethereum){
       window.web3 = new Web3(window.ethereum)
-      await window.ethereum.enable()
     } else if (window.web3) {
     window.web3 = new Web3(window.web3.currentprovider)
-  } else{
-    window.alert("There's awesome stuff on this site that only works with MetaMask, install it for full functionality")
     }
   }
 
   async loadBlockchainData() {
     const web3 = window.web3
-    // Load account
-    const accounts = await web3.eth.getAccounts()
-    this.setState({ account: accounts[0] })
-
     const networkId = await web3.eth.net.getId()
     const networkData = Color.networks[networkId]
     if(networkData) {
@@ -37,7 +40,7 @@ async componentWillMount(){
       const contract = new web3.eth.Contract(abi, address)
       this.setState({ contract })
 
-      const totalSupply = await contract.methods.totalSupply().call()
+      let totalSupply = await contract.methods.totalSupply().call()
       this.setState({ totalSupply })
       // Load Colors
       if(totalSupply<4){
@@ -55,16 +58,14 @@ async componentWillMount(){
         })
       }
       } 
-    } else {
-      window.alert("You're on the wrong network, friend. Get on Harmony Mainnet to see everything this site has to offer")
-      // Set up a function here that either outputs the button or outputs the error message
     }
   }
     mint = (color) => {
-    this.state.contract.methods.mint(color).send({ from: this.state.account })
+    this.state.contract.methods.mint(color).send({ from: this.props.account })
     .once('receipt', (receipt) => {
       this.setState({
-        colors: [...this.state.colors, color]   
+        colors: [...this.state.colors, color],
+        totalSupply: parseInt(this.state.totalSupply)+1
       })
     })
     }
@@ -74,7 +75,7 @@ async componentWillMount(){
   return Math.floor(Math.random() * arrayLength);
   }
   
-  sentenceGenerator() {
+  sentenceGenerator = () => {
     let firstWord = firstPart[this.getRandomInt(firstPart.length)]
     let secondWord = secondPart[this.getRandomInt(secondPart.length)]
     let thirdWord = thirdPart[this.getRandomInt(thirdPart.length)]
@@ -87,7 +88,6 @@ async componentWillMount(){
 constructor(props){
   super(props)
   this.state = {
-    account: '',
     contract: null,
     totalSupply: 0,
     colors: [],
@@ -110,16 +110,10 @@ constructor(props){
             <br /><br />Mint yourself a <strong> free</strong> NFT on the Harmony Network!
           </p>
           
-
-          {/* <h2>I'm not, like, a <em>qualified</em> counsellor, but...</h2> */}
         </div>
         {/* Button */}
-        <div class="text-center mt-5 my-2">
-          <button class="btn btn-large shadow-sm buttonText"  onClick={(event)=>{
-              event.preventDefault()
-              this.sentenceGenerator()
-          }}>Mint Motivational NFT
-          </button>
+        <div class="text-center mt-3 my-2">
+          <CustomButton buttonText = "Mint Life Advice" buttonFunction = {this.sentenceGenerator} account = {this.props.account} />
         </div>
         <br />
         <p class="primary text-center my-2">{this.state.totalSupply} out of 6969 Minted</p>
@@ -175,9 +169,7 @@ constructor(props){
        <br />
           If you want to go deeper, copy your ONE address and head to the 
           <a href="https://explorer.harmony.one/" target="_blank" rel="noopener noreferrer"> block explorer</a>,
-          paste your address and click on the transaction hash of your last transaction. Then scroll down, copy the
-          code from the "input" field, paste it into this <a href="https://www.duplichecker.com/hex-to-text.php" target="_blank" rel="noopener noreferrer">hex to text converter</a>,
-          remove the 0x from the start and convert it. There is your NFT text straight from the blockchain!
+          paste your address and click on the transaction hash of your last transaction. Then scroll down, and check out "Internal Transactions" There is your NFT text straight from the blockchain!
         </p>
         </div>
       </div>          

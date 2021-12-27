@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import Web3 from 'web3'
 import './App.css';
 import Color from '../abis/Color.json'
-// import logo from '../GTC Full Logo.jpg';
 import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
 import Navtwo from './Navtwo';
-// import Sample from './Sample';
 import Home from './Home';
 import About from './About.js';
-//import NetworkError from './NetworkError';
 import { BrowserRouter, Route} from 'react-router-dom';
 import LifeAdvice from './LifeAdvice';
 import siteIcon from "../NFTIcon.png"
@@ -19,6 +16,11 @@ import GoodNFTimers from './GoodNFTimers';
 class App extends Component {
 
 async componentWillMount(){
+  // await this.loadWeb3()
+  // await this.loadBlockchainData()
+}
+
+async connectToOne(){
   await this.loadWeb3()
   await this.loadBlockchainData()
 }
@@ -26,7 +28,9 @@ async componentWillMount(){
   async loadWeb3() {
     if (window.ethereum){
       window.web3 = new Web3(window.ethereum)
-      await window.ethereum.enable()
+          const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts"})
+          this.setState ({account: accounts[0]})
     } else if (window.web3) {
     window.web3 = new Web3(window.web3.currentprovider)
   } else{
@@ -35,48 +39,15 @@ async componentWillMount(){
 
   async loadBlockchainData() {
     const web3 = window.web3
-    // Load account
-    const accounts = await web3.eth.getAccounts()
-    this.setState({ account: accounts[0] })
 
+    // Load networks
     const networkId = await web3.eth.net.getId()
     const networkData = Color.networks[networkId]
-    if(networkData) {
-      const abi = Color.abi
-      const address = networkData.address
-      const contract = new web3.eth.Contract(abi, address)
-      this.setState({ contract })
-      const totalSupply = await contract.methods.totalSupply().call()
-      this.setState({ totalSupply })
-      // Load Colors
-      if(totalSupply<4){
-      for (var i = 1; i <= totalSupply; i++) {
-        const color = await contract.methods.colors(i - 1).call()
-        this.setState({
-          colors: [...this.state.colors, color]
-        })
-      }
-    } else {
-        for (var j = totalSupply-3; j <= totalSupply; j++) {
-        const color = await contract.methods.colors(j - 1).call()
-        this.setState({
-          colors: [...this.state.colors, color]
-        })
-      }
-      } 
-    } else {
+    if(!networkData) {
+      window.alert("You're on the wrong Network!")
     }
   }
-    mint = (color) => {
-    this.state.contract.methods.mint(color).send({ from: this.state.account })
-    .once('receipt', (receipt) => {
-      this.setState({
-        colors: [...this.state.colors, color]   
-      })
-    })
-    }
 
-   
   getRandomInt(arrayLength) {
   return Math.floor(Math.random() * arrayLength);
   }
@@ -94,43 +65,52 @@ async componentWillMount(){
 constructor(props){
   super(props)
   this.state = {
-    account: '',
+    account: 'Not Connected',
     contract: null,
     totalSupply: 0,
     colors: [],
     networkError: '',
     }
-
   }
 
 
   render() {
+    let accountConditional; 
+            if(this.state.account==="Not Connected"){
+              accountConditional = 
+              <button className="btn-large"
+                onClick={(event)=>{
+                event.preventDefault()
+                this.connectToOne()
+          }}>Connect to MetaMask</button>}
+          else{
+          accountConditional = <p className="font-size: 2rem">Account: {this.state.account}</p>
+          }
     return (
      <BrowserRouter>
-        <div class="generalfont">
+        <div className="generalfont">
           <Navtwo />
-          <div class="bg-white d-lg-none d-xl-none d-md-none text-end"><p class="psmall">Account: {this.state.account}</p></div>
-          <div class="bg-white d-none d-lg-block d-xl-block d-md-block text-end"><p class="font-size: 2rem">Account: {this.state.account}</p></div>
+          <div className="bg-white d-lg-none d-xl-none d-md-none text-end sticky-top"><p className="psmall">{accountConditional}</p></div>
+          <div className="bg-white d-none d-lg-block d-xl-block d-md-block text-end sticky-top">{accountConditional}</div>
 
-          <div class="sitebackground pr-4 pl-4 pb-5">
+          <div className="sitebackground pr-4 pl-4 pb-5">
         
                   <br /><br />
-            <div class="container rounded shadow-lg bg-white mt-2 pt-2 px-4" >
-              <div class="row">
-              <div class="col">
-              <h1 class="sitetitle">Good Times Coin</h1>
+            <div className="container rounded shadow-lg bg-white mt-2 pt-2 px-4" >
+              <div className="row">
+              <div className="col">
+              <h1 className="sitetitle">Good Times Coin</h1>
               </div>
-              <div class="col ml-auto"><img class="float-right pr-2 pt-2" src={siteIcon} alt="Good NF Timer" /></div>
+              <div className="col ml-auto"><img className="float-right pr-2 pt-2" src={siteIcon} alt="Good NF Timer" /></div>
               </div>
               {/* <Switch>   */}
-                <Route path = "/" component={Home} exact/>
-                <Route path = "/home" component={Home} exact/>
-                <Route path = "/good-nf-timers" component={GoodNFTimers} exact/>
+                <Route path = "/" exact><Home account={this.state.account}/></Route>
+                <Route path = "/home" exact><Home account={this.state.account}/></Route>
+                <Route path = "/good-nf-timers" exact><GoodNFTimers account={this.state.account}/></Route>
                 <Route path = "/about" component={About} exact/>
-                <Route path = "/life-advice" component={LifeAdvice} exact/>
+                <Route path = "/life-advice" exact><LifeAdvice account={this.state.account}/></Route>
                 <Route path = "/roadmap" component={Roadmap} exact/>
-                <Route path = "/mynfts" component={MyNFTs} exact/>
-                <Route path = "/GoodNFTimers" component={GoodNFTimers} exact/>
+                <Route path = "/mynfts" exact><MyNFTs account={this.state.account}/></Route>
               {/* </Switch> */}
               
             </div>

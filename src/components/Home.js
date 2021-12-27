@@ -5,7 +5,7 @@ import LifeAdvice from "./LifeAdvice";
 import Roadmap from "./RoadMap";
 import GoodNFTimers from "./GoodNFTimers";
 
-function Home() {
+function Home(props) {
 
     return (
         <div>
@@ -42,8 +42,8 @@ function Home() {
             </div>
     </div>
     <br />
-    <GoodNFTimers/>
-    <LifeAdvice/>
+    <GoodNFTimers account={props.account}/>
+    <LifeAdvice account={props.account}/>
     <Roadmap/>
     <About/>
 </div>        
