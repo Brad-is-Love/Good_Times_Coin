@@ -5,18 +5,67 @@ font-family: 'Aclonica', sans-serif;
 
 .generalfont{
   font-family: 'Carme', sans-serif;
+  color: antiquewhite;
 }
 
 .sitetitle{
- font-family: 'Hi Melody', cursive;
- font-size: 7vw;
- color: rgb(0, 163, 232)
+ text-align: center;
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: bold;
+ font-size: 6.4vw;
+ color: rgb(0, 163, 232);
+ text-shadow: 2px 2px 5px black;
 }
 
-.headings{
-  font-family: 'Hi Melody', cursive;
- font-size:40px;
- color: rgb(0, 163, 232)
+.siteHeading{
+ text-align: center;
+ font-family: 'Courier New', Courier, monospace;
+ font-size:3.2vw;
+ color: #ff0046
+}
+
+.infoCard{
+  position: relative;
+  z-index: 2;
+  border-top-style: solid;
+  border-top-color: #ff0046;
+  border-top-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #ff0046;
+  border-bottom-width: 2px;
+}
+
+.sectionTitleRight{
+ position: absolute;
+ top: 0;
+ right: 0;
+ z-index: -1;
+ font-family: 'Courier New', Courier, monospace;
+ font-size:4.2vw;
+ color: #ff0046
+}
+.sectionTitleLeft{
+ position: absolute;
+ top: 0;
+ Left: 0;
+ z-index: -1;
+ font-family: 'Courier New', Courier, monospace;
+ font-size:4.2vw;
+ color: #ff0046
+}
+
+
+.sectionText{
+ font-family: 'Arial', Arial, sans-serif;
+ font-weight: lighter;
+ font-size:larger;
+ color: white
+}
+
+.largeBlue{
+  text-align: center;
+  font-size: 1.7vw;
+  color: rgb(0, 163, 232);
 }
 
 .buttonText{
@@ -61,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  font-size: medium;
+  font-size: large;
 }
 
 .token {
@@ -71,7 +120,7 @@ p {
 
 .sitebackground {
   /* background-image: url('../GTC Full Logo.jpg'); */
-  background-image: url('../logo2.png');
+  background-image: url('../logo3.png');
   background-color: rgb(0, 163, 232);
   background-repeat: repeat;
   background-size: 6vw;
@@ -79,7 +128,7 @@ p {
 }
 .sitebackgroundMobile {
   /* background-image: url('../GTC Full Logo.jpg'); */
-  background-image: url('../logo2.png');
+  background-image: url('../logo3.png');
   background-color: rgb(0, 163, 232);
   background-repeat: repeat;
   background-size: 8vw;
@@ -123,6 +172,16 @@ p {
   /* border: solid 4px rgb(182, 0, 142);
   background-color: rgb(0, 0, 0); */
   padding: 10px;
+}
+
+.goodCreatureContainer{
+  width: 100%;
+  height: 69px
+}
+
+.goodCreature{
+  position:absolute;
+  height: 69px
 }
 
 

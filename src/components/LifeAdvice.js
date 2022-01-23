@@ -1,105 +1,74 @@
-import React, { Component } from 'react';
-import Web3 from 'web3'
+import React, {useState} from 'react'
+import Web3 from 'web3';
 import './App.css';
 import Color from '../abis/Color.json'
 // import logo from '../GTC Full Logo.jpg';
 import { firstPart, secondPart, thirdPart, lastPart } from '../Arrays';
 import CustomButton from './CustomButton';
 
-class LifeAdvice extends Component {
+const LifeAdvice = (props) => {
+    const web3 = new Web3(window.ethereum)
+    const [sentences, setSentences] = useState([]) 
+    const [loadedSupply, setLoadedSupply] = useState(0)
+    
+    if(props.account !== 'Not Connected' && props.networkID !== null){
+        var abi = Color.abi
+        var networkData = Color.networks[props.networkID]
+        var address = networkData.address
+        var contract = new web3.eth.Contract(abi, address)
+        
+        contract.methods.totalSupply().call()
+            .then(supply => checkSupply(supply)
+            )
 
-async componentWillMount(){
-  if(this.props.account !== "Not Connected") {
-    await this.loadWeb3()
-    await this.loadBlockchainData()
-  }
-}
-
-async componentDidUpdate (prevProps){
-      if(this.props.account !== prevProps.account){
-        await this.loadBlockchainData()
-        console.log("Life advice Updated")
-      }
+        var checkSupply = (supply) => {
+            if(supply !== loadedSupply) {
+                setLoadedSupply(supply)
+                loadSentences(supply)
+            }
+        }
+        
+        const loadSentences = async (supply) => {
+            var tempSentences = []
+            for (var j = supply-2; j <= supply; j++) {
+                var sentence = await contract.methods.colors(j - 1).call()
+                tempSentences.push(sentence)
+            }
+            setSentences(tempSentences)
+        } 
     }
 
-  async loadWeb3() {
-    if (window.ethereum){
-      window.web3 = new Web3(window.ethereum)
-    } else if (window.web3) {
-    window.web3 = new Web3(window.web3.currentprovider)
-    }
-  }
-
-  async loadBlockchainData() {
-    const web3 = window.web3
-    const networkId = await web3.eth.net.getId()
-    const networkData = Color.networks[networkId]
-    if(networkData) {
-      const abi = Color.abi
-      const address = networkData.address
-      const contract = new web3.eth.Contract(abi, address)
-      this.setState({ contract })
-
-      let totalSupply = await contract.methods.totalSupply().call()
-      this.setState({ totalSupply })
-      // Load Colors
-      if(totalSupply<4){
-      for (var i = 1; i <= totalSupply; i++) {
-        const color = await contract.methods.colors(i - 1).call()
-        this.setState({
-          colors: [...this.state.colors, color]
+    var mint = (sentence) => {
+        contract.methods.mint(sentence).send({ from: props.account })
+          
+          .then(receipt => {
+              contract.methods.mint("this is a test").send({ from: props.account })
+            
+            .once('receipt', () => {
+                contract.methods.totalSupply().call()
+                .then(supply => checkSupply(supply)
+                )    
+            })
         })
-      }
-    } else {
-        for (var j = totalSupply-3; j <= totalSupply; j++) {
-        const color = await contract.methods.colors(j - 1).call()
-        this.setState({
-          colors: [...this.state.colors, color]
-        })
-      }
-      } 
-    }
-  }
-    mint = (color) => {
-    this.state.contract.methods.mint(color).send({ from: this.props.account })
-    .once('receipt', (receipt) => {
-      this.setState({
-        colors: [...this.state.colors, color],
-        totalSupply: parseInt(this.state.totalSupply)+1
-      })
-    })
     }
 
-   
-  getRandomInt(arrayLength) {
-  return Math.floor(Math.random() * arrayLength);
-  }
+    var getRandomInt = (arrayLength) => {
+        return Math.floor(Math.random() * arrayLength);
+    }
   
-  sentenceGenerator = () => {
-    let firstWord = firstPart[this.getRandomInt(firstPart.length)]
-    let secondWord = secondPart[this.getRandomInt(secondPart.length)]
-    let thirdWord = thirdPart[this.getRandomInt(thirdPart.length)]
-    let lastWord = lastPart[this.getRandomInt(lastPart.length)]
-    let fifthWord = thirdPart[this.getRandomInt(thirdPart.length)]
-    let sentence = '"'+firstWord+" "+secondWord+" "+thirdWord+" "+lastWord+" "+fifthWord+'"'
-    this.mint(sentence)
-  }
-
-constructor(props){
-  super(props)
-  this.state = {
-    contract: null,
-    totalSupply: 0,
-    colors: [],
+    var  sentenceGenerator = () => {
+        let firstWord = firstPart[getRandomInt(firstPart.length)]
+        let secondWord = secondPart[getRandomInt(secondPart.length)]
+        let thirdWord = thirdPart[getRandomInt(thirdPart.length)]
+        let lastWord = lastPart[getRandomInt(lastPart.length)]
+        let fifthWord = thirdPart[getRandomInt(thirdPart.length)]
+        let sentence = '"'+firstWord+" "+secondWord+" "+thirdWord+" "+lastWord+" "+fifthWord+'"'
+        mint(sentence)
     }
 
-  }
-
-
-  render() {
     return (
-      <div>
-      <div class="row px-3">
+        <div>
+            <div class="row px-3">
       {/* this is the main sentence site */}
         <div class="col-s-8">
           <p class="special">Life Advice NFT Generator</p>
@@ -113,20 +82,20 @@ constructor(props){
         </div>
         {/* Button */}
         <div class="text-center mt-3 my-2">
-          <CustomButton buttonText = "Mint Life Advice" buttonFunction = {this.sentenceGenerator} account = {this.props.account} />
+          <CustomButton buttonText = "Mint Life Advice" buttonFunction = {sentenceGenerator} account = {props.account} />
         </div>
         <br />
-        <p class="primary text-center my-2">{this.state.totalSupply} out of 6969 Minted</p>
+        <p class="primary text-center my-2">{loadedSupply} out of 6969 Minted</p>
       </div>
 
       <div>
         <div classname="row text-center">
-          {this.state.colors.slice(-1).reverse().map((color, key) => {
+          {sentences.slice(-1).reverse().map((sentence, key) => {
             return(
             <div key={key}>
               <div class="row justify-content-around">
-                <div class="border rounded p-3 bg-light bg-gradient">
-                  <center><h4>{color}</h4></center>
+                <div class="border rounded p-3 bg-dark bg-gradient">
+                  <center><h4>{sentence}</h4></center>
                 </div>
               </div>
             </div>
@@ -135,12 +104,12 @@ constructor(props){
           </div>
           <br />
           <div classname="row text-center">
-          {this.state.colors.slice(-2,-1).reverse().map((color, key) => {
+          {sentences.slice(-2,-1).reverse().map((sentence, key) => {
             return(
             <div key={key}>
               <div class="row justify-content-around faded">
-                <div class="border rounded p-3 bg-light bg-gradient">
-                  <center><h4>{color}</h4></center>
+                <div class="border rounded p-3 bg-dark bg-gradient">
+                  <center><h4>{sentence}</h4></center>
                 </div>
               </div>
             </div>
@@ -149,12 +118,12 @@ constructor(props){
           </div>
           <br />
           <div classname="row text-center">
-          {this.state.colors.slice(-3,-2).reverse().map((color, key) => {
+          {sentences.slice(-3,-2).reverse().map((sentence, key) => {
             return(
             <div key={key}>
               <div class="row justify-content-around moreFaded">
-                <div class="border rounded p-3 bg-light bg-gradient">
-                  <center><h4>{color}</h4></center>
+                <div class="border rounded p-3 bg-dark bg-gradient">
+                  <center><h4>{sentence}</h4></center>
                 </div>
               </div>
             </div>
@@ -173,9 +142,8 @@ constructor(props){
         </p>
         </div>
       </div>          
-      </div>
-    );
-  }
+        </div>
+    )
 }
 
-export default LifeAdvice;
+export default LifeAdvice
