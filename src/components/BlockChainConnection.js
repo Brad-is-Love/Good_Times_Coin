@@ -23,6 +23,8 @@ const BlockChainConnection = () => {
             method: "eth_requestAccounts"}).then(result => {
                 accountChangedHandler(result[0]);
             })
+            window.ethereum.on('accountsChanged', accountChangedHandler);
+            window.ethereum.on('chainChanged', chainChangedHandler);
         } else {
             setErrorMessage('Please install Metamask')
         }
@@ -37,9 +39,6 @@ const BlockChainConnection = () => {
     const chainChangedHandler = () => {
         window.location.reload();
     }
-
-    window.ethereum.on('accountsChanged', accountChangedHandler);
-    window.ethereum.on('chainChanged', chainChangedHandler);
 
     const getChainID = () => {
         window.ethereum.request({ method: 'eth_chainId' })
@@ -66,9 +65,8 @@ const BlockChainConnection = () => {
             <div className='col'>
                 <ConnectMetamask account={defaultAccount} connectToMeta={connectWalletHandler}/>
             </div>
-            <div className='errorMessage'>{errorMessage}</div>
-
-          </div>
+          </div>  
+                    <div className='errorMessage'>{errorMessage}</div>
 
                   <br /><br />
             <div className="container rounded bg-transparent px-4" >
