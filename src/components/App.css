@@ -17,11 +17,22 @@ font-family: 'Aclonica', sans-serif;
  text-shadow: 2px 2px 5px black;
 }
 
+.account{
+    font-size: 19px;
+  }
+
 .siteHeading{
  text-align: center;
  font-family: 'Courier New', Courier, monospace;
  font-size:3.2vw;
  color: #ff0046
+}
+
+.errorMessage{
+  text-align: center;
+ /* font-family: 'Courier New', Courier, monospace; */
+ font-size:2.4vw;
+ color: #00fff2
 }
 
 .infoCard{
@@ -31,6 +42,15 @@ font-family: 'Aclonica', sans-serif;
   border-top-color: #ff0046;
   border-top-width: 2px;
   border-bottom-style: solid;
+  border-bottom-color: #ff0046;
+  border-bottom-width: 2px;
+}
+
+.redline{
+    border-top-style: solid;
+    border-top-color: #ff0046;
+    border-top-width: 2px;
+     border-bottom-style: solid;
   border-bottom-color: #ff0046;
   border-bottom-width: 2px;
 }
@@ -64,7 +84,7 @@ font-family: 'Aclonica', sans-serif;
 
 .largeBlue{
   text-align: center;
-  font-size: 1.7vw;
+  font-size: 1.8vw;
   color: rgb(0, 163, 232);
 }
 
@@ -124,15 +144,10 @@ p {
   background-color: rgb(0, 163, 232);
   background-repeat: repeat;
   background-size: 6vw;
-  min-height: 600px;
-}
-.sitebackgroundMobile {
-  /* background-image: url('../GTC Full Logo.jpg'); */
-  background-image: url('../logo3.png');
-  background-color: rgb(0, 163, 232);
-  background-repeat: repeat;
-  background-size: 8vw;
-  min-height: 400px;
+  min-height: 800px;
+  /* pr-4 pl-4 pb-5 */
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .psmall {
@@ -144,34 +159,12 @@ p {
   opacity: .55;
 }
 
-.video-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
-.flyerV{
-  width: 69px;
-  height: 420px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.flyerH{
-  width: 420px;
-  height: 69px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .goodnft{
   width: 100%;
-  /* border: solid 4px rgb(182, 0, 142);
-  background-color: rgb(0, 0, 0); */
-  padding: 10px;
+  /* border: solid 1px rgb(180, 0, 126); */
+  border: solid 1px #ff00448e;
+  background-color: rgb(0, 0, 0, 0.3);
+  padding: 15px;
 }
 
 .goodCreatureContainer{
@@ -202,4 +195,89 @@ p {
 .moreFaded
 {
   opacity: 0.15
+}
+
+@media(max-width: 900px){
+  .account{
+    font-size: 15px;
+  }
+  .sitebackground {
+    background-size: 7.5vw;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .siteHeading{
+    font-size:4.5vw;
+  }
+  .largeBlue{
+    font-size: 2.6vw;
+  }
+  .goodCreatureContainer{
+    width: 100%;
+    height: 60px
+  }
+
+  .sectionText{
+    font-size:large;
+  }
+
+  .goodCreature{
+    position:absolute;
+    height: 60px
+  }
+  .sectionTitleRight{
+  font-size:6vw;
+  }
+  .sectionTitleLeft{
+  font-size:6vw;
+  }
+}
+
+@media(max-width: 540px){
+  .sitetitle{
+  font-size: 7vw;
+  }
+  .goodnft{
+    padding: 10px;
+  }
+  .sectionTitleRight{
+  font-size:7vw;
+  }
+  .sectionTitleLeft{
+  font-size:7vw;
+  }
+  .sectionText{
+    font-size:medium;
+  }
+  .account{
+    font-size: 11px;
+  }
+  
+  .siteHeading{
+    font-size:6vw;
+  }
+
+  .errorMessage{
+  font-size:4vw;
+  }
+
+  .sitebackground {
+    background-size: 9vw;
+    min-height: 600px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .largeBlue{
+    font-size: 4vw;
+  }
+  .goodCreatureContainer{
+    width: 100%;
+    height: 50px
+  }
+
+  .goodCreature{
+    position:absolute;
+    height: 50px
+  }
 }

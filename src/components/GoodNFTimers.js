@@ -12,7 +12,7 @@ const GoodNFTimers = (props) => {
     const [gtcButtonText, setGtcButtonText] = useState("Pay 6.9GTC to Mint")
     const [mintButtonText, setMintButtonText] = useState("Pay 420 ONE to Mint")
 
-    if(props.account !== 'Not Connected' && props.networkID !== null){
+    if(props.account !== 'Not Connected' && props.networkID === "1666600000"){
         var abi = gNFT.abi
         var networkData = gNFT.networks[props.networkID]
         var nftAddress = networkData.address
@@ -46,6 +46,7 @@ const GoodNFTimers = (props) => {
                     tempNFTs.push(NFT)   
                 }
             setGoodNFTs(tempNFTs)
+            console.log("NFTs Updated")
             }
         } //end of if statement
 
@@ -89,11 +90,11 @@ const GoodNFTimers = (props) => {
     }
 
 return (
-      <div>
+      <div class="redline my-5">
       <div class="row px-3">
       {/* this is the main sentence site */}
         <div class="col-s-8 ">
-          <p class="special">Good NF Timers</p>
+          <p class="siteHeading pt-5">Good NF Timers</p>
            </div>
            
         <p class="primary text-center"> <hr/><strong>Mint yourself a beautiful, 420x69 pixel, Good NF Timer.</strong>

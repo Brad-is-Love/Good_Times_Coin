@@ -11,15 +11,17 @@ export const CreatureAccross = (props) => {
         const elem = document.getElementById(props.divid);
         const top = elem.getBoundingClientRect().top;
         const creatureWidth = elem.getBoundingClientRect().width
-        console.log(top)
-        //right to equal zero when div height = client height
-        //right to equal 100% when div height = 0 
+        
         const scrolled = (width+creatureWidth)*(height-30-top)/height-creatureWidth
         
-        console.log("scrolled"+scrolled)
-        console.log("clientheight"+document.documentElement.clientHeight)
-        console.log(width)
-        setScrollTop(scrolled)
+        if(scrolled>0 && scrolled<width-creatureWidth){
+            setScrollTop(scrolled)
+        } else if((scrolled+creatureWidth)>width) {
+            setScrollTop(width-creatureWidth)
+        } else {
+            setScrollTop(0)
+        }
+        
     }
 
     useLayoutEffect(() => {

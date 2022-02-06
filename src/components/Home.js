@@ -40,11 +40,11 @@ function Home(props) {
             
             <div className="my-5">
                 <InfoSection
-                    align = "left"
+                    align = "right"
                     title = "An HRC-20 Token"
                     text1 = "On July 13 2021, times started to change, for the better."
-                    text2 = "Good Times Coin was launched on the Harmony Network, to address the chronic, global shortage of Good Times."
-                    text3 = "Using a combination of good feelings and ancient mathematical secrets, revolving around the golden numbers, Good Times Coin has been living up to it's name."
+                    text2 = "Good Times Coin was launched on the Harmony Network, to address the global shortage of Good Times."
+                    text3 = "Using a combination of good feelings and ancient mathematical secrets, Good Times Coin has been living up to it's name."
                 />
             </div>
 
@@ -52,35 +52,39 @@ function Home(props) {
             
             <div className="my-5">
                 <InfoSection
-                    align = "right"
+                    align = "left"
                     title = "Distribution"
                     text1 = "Good Times for All: 100% Fair Token Distribution"
-                    text2 = "Good Times Coin is currently in the distribution phase. 68GTC is being given to 1000 people via reddit. Check out the whitepaper for more info."
-                    text3 = "30% of GTC has been sent out so far. To get yours, message u/goodtimesbradtimes, on reddit, with an account created before 18 September 2021."
+                    text2 = "Good Times Coin is currently in the distribution phase. 68GTC is being given to 1000 people via reddit."
+                    text3 = "31% of GTC has been sent out so far. To get yours, message u/goodtimesbradtimes, with an account created before 18 September 2021."
                 />
             </div>
             {/* <ScrollAnimation/> */}
-            <CreatureAccross creature = {creature2} divid = "2"/>
-            <div className="my-5">
-                <InfoSection 
-                    align = "left"
-                    title = "Life Advice NFTs"
-                    text1 = "Good Times for You: Motivational NFTs"
-                    text2 = "If you need a little help getting the good times rolling, check out our Life Advice NFT generator."
-                    text3 = "Life advice NFTs are free to mint and stored 100% on-chain."
-                />
-            </div>
-            <CreatureAccross creature = {creature3} divid = "3"/>
-            <div className="my-5">
-                <InfoSection 
-                    align = "right"
-                    title = "Good NF Timers"
-                    text1 = "Your Ticket to Good Times: The NFT Collection"
-                    text2 = "Good NF Timers are the first Good Times Coin NFT Collection. Original artwork by Brad Sandilands."
-                    text3 = "Every Good NF Timer in your wallet will give you a 10% discount, when shopping with GTC on the future Good Times Store, up to a maximum of 69% off."
-                />
-            </div>
+            <CreatureAccross creature = {creature2} divid = "2"/>   
+            <a href="/good-nf-timers">
+                <div className="my-5">
+                    <InfoSection 
+                        align = "right"
+                        title = "Good NF Timers"
+                        text1 = "Your Ticket to Good Times: The NFT Collection"
+                        text2 = "Good NF Timers are the first Good Times Coin NFT Collection. Original artwork by Brad Sandilands."
+                        text3 = "Every Good NF Timer in your wallet will give you a 10% discount, when shopping with GTC on the future Good Times Store, up to 69% off."
+                    />
+                </div>
+            </a>
             <CreatureAccross creature = {creature4} divid = "4"/>
+            <a href="/life-advice">
+                <div className="my-5">
+                    <InfoSection 
+                        align = "left"
+                        title = "Life Advice NFTs"
+                        text1 = "Good Times for You: Motivational NFTs"
+                        text2 = "If you need a little help getting the good times rolling, check out our Life Advice NFT generator."
+                        text3 = "Life advice NFTs are free to mint and stored 100% on-chain."
+                    />
+                </div>
+            </a>
+            <CreatureAccross creature = {creature3} divid = "3"/>
             {/* <br />
             <hr />
             <p class="text-center" >
@@ -108,10 +112,12 @@ function Home(props) {
                 </div>
             </div> */}
     </div>
-    <br />
     <GoodNFTimers account={props.account} networkID={props.networkID}/>
+    <CreatureAccross creature = {creature0} divid='6'/>
     <LifeAdvice account={props.account} networkID={props.networkID}/>
+    <CreatureAccross creature = {creature1} divid='7'/>
     <Roadmap/>
+    <CreatureAccross creature = {creature2} divid='8'/>
     <About/>
 </div>        
     );

@@ -31,7 +31,7 @@ function Navtwo(props) {
           <Link class="nav-link text-white" to="/mynfts">My NFTs</Link>
         </li>
 
-      <li class="nav-item  text-white bg-transparent">
+      <li class="nav-item  text-white">
         <div class="dropdown text-white bg-transparent">
           <button class="btn btn-primary-outline dropdown-toggle text-white bg-transparent" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           Resources and Social

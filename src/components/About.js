@@ -4,9 +4,9 @@ import './App.css'
 function About() {
 
     return(
-        <div>
+        <div class="redline my-5">
             <br />
-            <h1 class="special">About</h1> 
+            <p class="siteHeading pt-5">About</p> 
             <h4 class="headings">Good Times Coin:</h4> 
             When I was a kid my mum joked: “Hard work pays off in the future, but laziness pays off now!”
 <br /> <br />
@@ -22,7 +22,7 @@ function About() {
             The power is YOURS!
 <br /><br />
             <h4 class="headings">The "Team"</h4>
-            I’m Brad, AKA u/goodtimesbradtimes. I am the GTC team.
+            I’m Brad Sandilands, AKA u/goodtimesbradtimes. I am the GTC team.
             <br /><br />
             I bought my first little piece of Bitcoin as a secret santa gift in about 2016 
             then played online poker for Bitcoin through 2017-2018. One thing led to another and next

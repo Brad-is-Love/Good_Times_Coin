@@ -10,7 +10,7 @@ export default function ConnectMetamask(props) {
                 props.connectToMeta()
           }}>Connect to MetaMask</button>}
           else{
-          accountConditional = <p className="font-size: 2rem">{props.account}</p>
+          accountConditional = <p className="account">{props.account}</p>
           }
           return (
           <div>

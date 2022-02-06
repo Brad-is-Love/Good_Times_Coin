@@ -11,7 +11,7 @@ const LifeAdvice = (props) => {
     const [sentences, setSentences] = useState([]) 
     const [loadedSupply, setLoadedSupply] = useState(0)
     
-    if(props.account !== 'Not Connected' && props.networkID !== null){
+    if(props.account !== 'Not Connected' && props.networkID === "1666600000"){
         var abi = Color.abi
         var networkData = Color.networks[props.networkID]
         var address = networkData.address
@@ -40,16 +40,12 @@ const LifeAdvice = (props) => {
 
     var mint = (sentence) => {
         contract.methods.mint(sentence).send({ from: props.account })
-          
-          .then(receipt => {
-              contract.methods.mint("this is a test").send({ from: props.account })
             
-            .once('receipt', () => {
-                contract.methods.totalSupply().call()
-                .then(supply => checkSupply(supply)
-                )    
-            })
-        })
+          .once('receipt', () => {
+              contract.methods.totalSupply().call()
+              .then(supply => checkSupply(supply)
+              )    
+          })
     }
 
     var getRandomInt = (arrayLength) => {
@@ -67,11 +63,11 @@ const LifeAdvice = (props) => {
     }
 
     return (
-        <div>
+        <div className='redline my-5'>
             <div class="row px-3">
       {/* this is the main sentence site */}
         <div class="col-s-8">
-          <p class="special">Life Advice NFT Generator</p>
+          <p class="siteHeading pt-5">Life Advice NFT Generator</p>
           <p>We all want good times, but sometimes we just don't know <em> how</em>. <br />
             <br /> This sophisticated algorithm generates accurate and relevant life advice, guaranteed to bring you good times.
             <br />These are text-based NFT's. There's no image. They're stored 100% on-chain, as opposed to most NFTs, that just point to an image URL
