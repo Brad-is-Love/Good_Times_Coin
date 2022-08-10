@@ -1,7 +1,8 @@
 import React from "react";
 
 export default function ConnectMetamask(props) {
-        let accountConditional; 
+        let accountConditional;
+        
             if(props.account==="Not Connected"){
               accountConditional = 
               <button className="btn-large"
@@ -10,7 +11,11 @@ export default function ConnectMetamask(props) {
                 props.connectToMeta()
           }}>Connect to MetaMask</button>}
           else{
-          accountConditional = <p className="account">{props.account}</p>
+            let displayAccount = props.account;
+            accountConditional = <div>My Account:<br/>{
+              
+              displayAccount.slice(0,4)+' . . . '+displayAccount.slice(displayAccount.length-4,displayAccount.length)
+            }</div>
           }
           return (
           <div>

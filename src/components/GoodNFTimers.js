@@ -90,37 +90,38 @@ const GoodNFTimers = (props) => {
     }
 
 return (
-      <div class="redline my-5">
-      <div class="row px-3">
+      <div className="redline my-5">
+      <div className="row px-3">
       {/* this is the main sentence site */}
-        <div class="col-s-8 ">
-          <p class="siteHeading pt-5">Good NF Timers</p>
+        <div className="col-s-8 ">
+          <p className="siteHeading pt-5">Good NF Timers</p>
            </div>
-           
-        <p class="primary text-center"> <hr/><strong>Mint yourself a beautiful, 420x69 pixel, Good NF Timer.</strong>
+
+           <hr/>
+        <p className="primary text-center"> <strong>Mint yourself a beautiful, 420x69 pixel, Good NF Timer.</strong>
         <br/>They're not perfect, but they're Good NF.
-        <hr/></p>
+        </p><hr/>
 
         {/* Button */}
-        <div class="text-center mt-3 my-2">
+        <div className="text-center mt-3 my-2">
           <p>There are two ways to mint: Pay 6.9GTC, or hold onto it and pay with ONE</p>
           <CustomButton buttonText = {mintButtonText} buttonFunction = {mint} account = {props.account} />
           <CustomButton buttonText = {gtcButtonText} buttonFunction = {payGTC} account = {props.account} />
         </div>
         <br />
-        <p class="primary text-center my-2">{loadedSupply} out of 4269 Minted</p>
+        <p className="primary text-center my-2">{loadedSupply} out of 4269 Minted</p>
       </div>
 
           
       <div>
-        <div classname="row text-center">
-          <p class="primary text-center my-2">Here are the last 3 minted:</p>
+        <div className="row text-center">
+          <p className="primary text-center my-2">Here are the last 3 minted:</p>
           {goodNFTs.slice(-3).reverse().map((NFT, key) => {
             return(
             <div key={key}>
-              <div class="row justify-content-around">
-                <div class="p-3">
-                  <center><img class="goodnft shadow" src={NFT} alt="check" /></center>
+              <div className="row justify-content-around">
+                <div className="p-3">
+                  <center><img className="goodnft shadow" src={NFT} alt="check" /></center>
                 </div>
               </div>
             </div>
@@ -132,16 +133,16 @@ return (
 
           {/* admin functions (to be moved) */}
             
-            {/* <button class="btn btn-large shadow-sm buttonText mx-2"  onClick={(event)=>{
+            {/* <button className="btn btn-large shadow-sm buttonText mx-2"  onClick={(event)=>{
                 event.preventDefault()
                 this.withdrawGTC()
             }}>Withdraw GTC</button>
-            <button class="btn btn-large shadow-sm buttonText mx-2"  onClick={(event)=>{
+            <button className="btn btn-large shadow-sm buttonText mx-2"  onClick={(event)=>{
                 event.preventDefault()
                 this.withdrawONE()
             }}>Withdraw ONE</button> */}
           
-      <div class="row p-3">
+      <div className="row p-3">
        
         </div>
       </div>          

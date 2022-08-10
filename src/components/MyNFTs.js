@@ -70,6 +70,7 @@ const MyNFTs = (props) => {
               let responseJson = await response.json();
               let imageData = await responseJson.image;
               let NFT = 'https://gateway.pinata.cloud/ipfs/'+imageData.slice(7)
+              console.log(NFT)
               tempNFTs.push(NFT)   
             }
             setGoodNFTs(tempNFTs)
@@ -77,8 +78,8 @@ const MyNFTs = (props) => {
         }
 
   return <div>
-          <p class="specialMobile d-lg-none d-xl-none d-md-none">My NFT Inventory</p>
-            <p class="special d-none d-lg-block d-xl-block d-md-block">My NFT Inventory</p>
+          <p className="specialMobile d-lg-none d-xl-none d-md-none">My NFT Inventory</p>
+            <p className="special d-none d-lg-block d-xl-block d-md-block">My NFT Inventory</p>
 
           My {nftBalance} Good NF Timers pick me up when I'm feeling blue:
         <br />
@@ -86,8 +87,8 @@ const MyNFTs = (props) => {
           {goodNFTs.map((myGNFT, key) => {
             return(
             <div key={key}>
-              <div class="row justify-content-around px-2 py-3">
-                  <center><img class="goodnft shadow" src={myGNFT} alt="check" /></center>
+              <div className="row justify-content-around px-2 py-3">
+                  <center><img className="goodnft shadow" src={myGNFT} alt="check" /></center>
                 <br />
               </div>
             </div>
@@ -103,8 +104,8 @@ const MyNFTs = (props) => {
           {sentences.map((myTokens, key) => {
             return(
             <div key={key}>
-              <div class="row justify-content-around">
-                <div class="border rounded p-3 m-3 bg-dark bg-gradient">
+              <div className="row justify-content-around">
+                <div className="border rounded p-3 m-3 bg-dark bg-gradient">
                   <center><h4>{myTokens}</h4></center>
                 </div>
               </div>

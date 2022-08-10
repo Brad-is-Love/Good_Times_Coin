@@ -1,16 +1,11 @@
 import React, {useState} from 'react'
 import Web3 from 'web3';
-import ConnectMetamask from './ConnectMetamask';
-import Navtwo from './Navtwo';
-import Home from './Home';
-import About from './About.js';
+import ConnectMetamask from '../ConnectMetamask';
+import NavStore from './NavStore';
 import { BrowserRouter, Route} from 'react-router-dom';
-import LifeAdvice from './LifeAdvice';
-import Roadmap from './RoadMap';
-import MyNFTs from './MyNFTs';
-import GoodNFTimers from './GoodNFTimers';
+import Account from './Account';
 
-const BlockChainConnection = () => {
+const ConnectionStore = () => {
 
     const [errorMessage, setErrorMessage] = useState(null);
     const [defaultAccount, setDefaultAccount] = useState('Not Connected');
@@ -60,7 +55,7 @@ const BlockChainConnection = () => {
         <div className="generalfont">
           <div className='row sticky-top'>
             <div className='col'>
-              <Navtwo />
+              <NavStore />
             </div>
             <div className='col'>
                 <ConnectMetamask account={defaultAccount} connectToMeta={connectWalletHandler}/>
@@ -70,16 +65,7 @@ const BlockChainConnection = () => {
 
                   <br /><br />
             <div className="container rounded bg-transparent px-4" >
-
-              {/* <Switch>   */}
-                <Route path = "/" exact><Home account={defaultAccount} networkID={networkID}/></Route>
-                <Route path = "/home" exact><Home account={defaultAccount} networkID={networkID}/></Route>
-                <Route path = "/good-nf-timers" exact><GoodNFTimers account={defaultAccount} networkID={networkID}/></Route>
-                <Route path = "/about" component={About} exact/>
-                <Route path = "/life-advice" exact><LifeAdvice account={defaultAccount} networkID={networkID}/></Route>
-                <Route path = "/roadmap" component={Roadmap} exact/>
-                <Route path = "/mynfts" exact><MyNFTs account={defaultAccount} networkID={networkID}/></Route>
-              {/* </Switch> */}
+                <Route path = "/account" exact><Account account={defaultAccount} networkID={networkID}/></Route>
               
             </div>
           </div>
@@ -90,4 +76,4 @@ const BlockChainConnection = () => {
         
 }
 
-export default BlockChainConnection
+export default ConnectionStore

@@ -1,8 +1,13 @@
 import React from "react";
-import './App.css'
-import { Link } from "react-router-dom";
+import '../App.css'
+//import { Link } from "react-router-dom";
 
-function Navtwo(props) {
+var mySiteURL = window.location.host.split(".");
+
+var returnTo = "http://" + mySiteURL[1];
+console.log(returnTo)
+
+function NavStore(props) {
 
   return (
     <nav className="navbar navbar-light bg-transparent">
@@ -13,23 +18,9 @@ function Navtwo(props) {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link text-white" to="/home">Home</Link>
+          <a className="nav-link text-white" href={returnTo}>Back to GTC</a>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/life-advice">Life Advice NFTs</Link>
-        </li>
-        <li className="nav-item">
-           <Link className="nav-link text-white" to="/good-nf-timers">Good NF Timers</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/roadmap">Roadmap</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/about">About</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/mynfts">My NFTs</Link>
-        </li>
+
 
       <li className="nav-item  text-white">
         <div className="dropdown text-white bg-transparent">
@@ -55,4 +46,4 @@ function Navtwo(props) {
   
 }
 
-export default Navtwo
+export default NavStore

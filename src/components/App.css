@@ -87,6 +87,11 @@ font-family: 'Aclonica', sans-serif;
   font-size: 1.8vw;
   color: rgb(0, 163, 232);
 }
+.smallBlue {
+  text-align: center;
+  font-size: 1.2vw;
+  color: rgb(0, 163, 232);
+}
 
 .buttonText{
   font-family: 'Hi Melody', cursive;
@@ -212,6 +217,10 @@ p {
   .largeBlue{
     font-size: 2.6vw;
   }
+  .smallBlue {
+    font-size: 1.8vw;
+  }
+
   .goodCreatureContainer{
     width: 100%;
     height: 60px
@@ -271,6 +280,10 @@ p {
   .largeBlue{
     font-size: 4vw;
   }
+  .smallBlue {
+    font-size: 2.8vw;
+  }
+
   .goodCreatureContainer{
     width: 100%;
     height: 50px

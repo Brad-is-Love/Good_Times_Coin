@@ -64,10 +64,10 @@ const LifeAdvice = (props) => {
 
     return (
         <div className='redline my-5'>
-            <div class="row px-3">
+            <div className="row px-3">
       {/* this is the main sentence site */}
-        <div class="col-s-8">
-          <p class="siteHeading pt-5">Life Advice NFT Generator</p>
+        <div className="col-s-8">
+          <p className="siteHeading pt-5">Life Advice NFT Generator</p>
           <p>We all want good times, but sometimes we just don't know <em> how</em>. <br />
             <br /> This sophisticated algorithm generates accurate and relevant life advice, guaranteed to bring you good times.
             <br />These are text-based NFT's. There's no image. They're stored 100% on-chain, as opposed to most NFTs, that just point to an image URL
@@ -77,20 +77,20 @@ const LifeAdvice = (props) => {
           
         </div>
         {/* Button */}
-        <div class="text-center mt-3 my-2">
+        <div className="text-center mt-3 my-2">
           <CustomButton buttonText = "Mint Life Advice" buttonFunction = {sentenceGenerator} account = {props.account} />
         </div>
         <br />
-        <p class="primary text-center my-2">{loadedSupply} out of 6969 Minted</p>
+        <p className="primary text-center my-2">{loadedSupply} out of 6969 Minted</p>
       </div>
 
       <div>
-        <div classname="row text-center">
+        <div className="row text-center">
           {sentences.slice(-1).reverse().map((sentence, key) => {
             return(
             <div key={key}>
-              <div class="row justify-content-around">
-                <div class="border rounded p-3 bg-dark bg-gradient">
+              <div className="row justify-content-around">
+                <div className="border rounded p-3 bg-dark bg-gradient">
                   <center><h4>{sentence}</h4></center>
                 </div>
               </div>
@@ -99,12 +99,12 @@ const LifeAdvice = (props) => {
           })}
           </div>
           <br />
-          <div classname="row text-center">
+          <div className="row text-center">
           {sentences.slice(-2,-1).reverse().map((sentence, key) => {
             return(
             <div key={key}>
-              <div class="row justify-content-around faded">
-                <div class="border rounded p-3 bg-dark bg-gradient">
+              <div className="row justify-content-around faded">
+                <div className="border rounded p-3 bg-dark bg-gradient">
                   <center><h4>{sentence}</h4></center>
                 </div>
               </div>
@@ -113,12 +113,12 @@ const LifeAdvice = (props) => {
           })}
           </div>
           <br />
-          <div classname="row text-center">
+          <div className="row text-center">
           {sentences.slice(-3,-2).reverse().map((sentence, key) => {
             return(
             <div key={key}>
-              <div class="row justify-content-around moreFaded">
-                <div class="border rounded p-3 bg-dark bg-gradient">
+              <div className="row justify-content-around moreFaded">
+                <div className="border rounded p-3 bg-dark bg-gradient">
                   <center><h4>{sentence}</h4></center>
                 </div>
               </div>
@@ -126,11 +126,11 @@ const LifeAdvice = (props) => {
             )
           })}
       </div>
-      <div class="row p-3">
-       
-        <p>
+      <div className="row p-3">
        <br />
-       <hr />
+       <hr />       
+        <p>
+
        <br />
           If you want to go deeper, copy your ONE address and head to the 
           <a href="https://explorer.harmony.one/" target="_blank" rel="noopener noreferrer"> block explorer</a>,
