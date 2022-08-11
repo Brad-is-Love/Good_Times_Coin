@@ -7,8 +7,6 @@ import Store from './components/StoreComponents/Store';
 
 const mySiteURL = window.location.host.split(".");
 
-console.log(mySiteURL)
-
 if(mySiteURL[0] ==="store"){
     ReactDOM.render(<Store />, document.getElementById('root'));
 }else{

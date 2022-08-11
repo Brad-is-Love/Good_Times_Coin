@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Web3 from 'web3'
 import './App.css';
 import Color from '../abis/Color.json'
@@ -13,6 +13,10 @@ const MyNFTs = (props) => {
     const [goodNFTs, setGoodNFTs] = useState([])
     const [loadedNFTs, setLoadedNFTs] = useState(0)
     const [loadedSenBal, setLoadedSenBal] = useState (0)
+
+    useEffect(() => {
+      window.scroll(0,0)
+    }, [])
 
     if(props.account !== 'Not Connected' && props.networkID === "1666600000"){
         let account = props.account

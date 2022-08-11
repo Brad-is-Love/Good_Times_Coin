@@ -1,11 +1,9 @@
 import React from "react";
 import '../App.css'
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 var mySiteURL = window.location.host.split(".");
-
-var returnTo = "http://" + mySiteURL[1];
-console.log(returnTo)
+var returnTo = window.location.protocol + "//" + mySiteURL[1];
 
 function NavStore(props) {
 
@@ -17,6 +15,13 @@ function NavStore(props) {
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li className="nav-item">
+          <Link className="nav-link text-white" to="/">Store Home</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link text-white" to="/account">Account</Link>
+        </li>
         <li className="nav-item">
           <a className="nav-link text-white" href={returnTo}>Back to GTC</a>
         </li>

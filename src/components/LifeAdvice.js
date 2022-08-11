@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Web3 from 'web3';
 import './App.css';
 import Color from '../abis/Color.json'
@@ -10,6 +10,10 @@ const LifeAdvice = (props) => {
     const web3 = new Web3(window.ethereum)
     const [sentences, setSentences] = useState([]) 
     const [loadedSupply, setLoadedSupply] = useState(0)
+
+    useEffect(() => {
+      window.scroll(0,0)
+    }, [])
     
     if(props.account !== 'Not Connected' && props.networkID === "1666600000"){
         var abi = Color.abi

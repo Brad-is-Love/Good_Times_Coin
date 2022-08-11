@@ -1,6 +1,12 @@
 import React from "react";
+import { useEffect } from "react";
 
 function Roadmap() {
+
+    useEffect(() => {
+        window.scroll(0,0)
+      }, [])
+
     return (
         <div className="redline my-5">
             <h1 className="siteHeading pt-5">The Road to Good Times</h1>

@@ -12,8 +12,14 @@ import creature1 from "../creatures/1.png"
 import creature2 from "../creatures/2.png"
 import creature3 from "../creatures/3.png"
 import creature4 from "../creatures/4.png"
+import { useEffect } from "react";
 
 function Home(props) {
+
+useEffect(() => {
+  window.scroll(0,0)
+}, [])
+
 
     return (
         <div>

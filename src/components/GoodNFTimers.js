@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Web3 from 'web3';
 import './App.css';
 import gNFT from '../abis/GoodNFTimers.json'
@@ -11,6 +11,10 @@ const GoodNFTimers = (props) => {
     const [loadedSupply, setLoadedSupply] = useState(0)
     const [gtcButtonText, setGtcButtonText] = useState("Pay 6.9GTC to Mint")
     const [mintButtonText, setMintButtonText] = useState("Pay 420 ONE to Mint")
+
+    useEffect(() => {
+      window.scroll(0,0)
+    }, [])
 
     if(props.account !== 'Not Connected' && props.networkID === "1666600000"){
         var abi = gNFT.abi

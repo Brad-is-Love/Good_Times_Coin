@@ -1,7 +1,13 @@
 import React from "react";
 import './App.css'
+import { useEffect } from "react";
 
 function About() {
+
+    useEffect(() => {
+        window.scroll(0,0)
+      }, [])
+
 
     return(
         <div className="redline my-5">
