@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Account from './Account';
 import Heading from './Heading';
 import NotFound from '../NotFound';
+import Book from './Book';
+
 
 const ConnectionStore = () => {
 
@@ -72,6 +74,10 @@ const ConnectionStore = () => {
                 </Switch>
                 
           </div>
+            <div className='row bookContainer'>
+                <Book/><Book/><Book/>
+            </div>
+
         </div>
 
     </BrowserRouter>

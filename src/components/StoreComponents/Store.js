@@ -7,7 +7,6 @@ const Store = () => {
     return(
         <div>
             <ConnectionStore />     
-
         </div>
     )
 }

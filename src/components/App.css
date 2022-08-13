@@ -294,3 +294,100 @@ p {
     height: 50px
   }
 }
+
+/* Book */
+.bookTile{
+  position: relative;
+  width: 400px;
+}
+
+.bookImage{
+  display: block;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.bookOverlay{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.6);
+  color: aliceblue;
+  z-index: 2;
+}
+
+.bookTitle{
+  position: absolute;
+  width:100%;
+  left: 20px;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.bookAuthor{
+  position: absolute;
+  width: 100%;
+  left: 20px;
+  top:50px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.bookDescription{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  color: aliceblue;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.bookDescription:hover{
+  opacity: 1;
+}
+
+.bookDescriptionSlide{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transform: translateY(20px);
+  transition: transform 0.25s ;
+}
+
+.bookDescriptionSlide:hover{
+  transform: translateY(0px);
+}
+
+.bookDescriptionText{
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  padding-right: 20px;
+}
+
+.bookDescriptionTitle{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding-right: 20px;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.bookDescriptionAuthor{
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  padding-right: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
