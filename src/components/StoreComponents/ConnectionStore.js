@@ -74,8 +74,8 @@ const ConnectionStore = () => {
                 </Switch>
                 
           </div>
-            <div className='row bookContainer'>
-                <Book/><Book/><Book/>
+            <div className='bookContainer'>
+                <Book/><Book/><Book/><Book/><Book/><Book/>
             </div>
 
         </div>
