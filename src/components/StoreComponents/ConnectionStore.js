@@ -1,13 +1,12 @@
 import React, {useState} from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Web3 from 'web3';
 import ConnectMetamask from '../ConnectMetamask';
 import NavStore from './NavStore';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import StoreFront from './StoreFront';
 import Account from './Account';
-import Heading from './Heading';
 import NotFound from '../NotFound';
-import Book from './Book';
-
+import SearchBox from './SearchBox';
 
 const ConnectionStore = () => {
 
@@ -56,30 +55,27 @@ const ConnectionStore = () => {
     return (
      <BrowserRouter>
         <div className="sitebackground pb-1">
-        <div className="generalfont">
-          <div className='row sticky-top'>
-            <div className='col'>
-              <NavStore />
-            </div>
-            <div className='col'>
-                <ConnectMetamask account={defaultAccount} connectToMeta={connectWalletHandler}/>
-            </div>
-          </div>  
+            <div className="generalfont">
+            <div className='row sticky-top'>
+                <div className='col'>
+                <NavStore />
+                </div>
+                <div className='col'>
+                    <SearchBox/>
+                </div>
+                <div className='col'>
+                    <ConnectMetamask account={defaultAccount} connectToMeta={connectWalletHandler}/>
+                </div>
+            </div>  
             <div className='errorMessage'>{errorMessage}</div>
-                <br /><br />
-                <Switch>
-                    <Route path = "/" exact><Heading/></Route>
+            <br /><br />
+            <Switch>
+                    <Route path = "/" exact><StoreFront/></Route>
                     <Route path = "/account" exact><Account account={defaultAccount} networkID={networkID}/></Route>
                     <Route><NotFound/></Route>
                 </Switch>
-                
-          </div>
-            <div className='bookContainer'>
-                <Book/><Book/><Book/><Book/><Book/><Book/>
             </div>
-
         </div>
-
     </BrowserRouter>
     )
         

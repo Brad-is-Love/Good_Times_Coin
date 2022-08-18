@@ -306,7 +306,7 @@ p {
 .bookTile{
   position: relative;
   width:22vw;
-  min-width: 250px;
+  min-width: 280px;
   max-width: 400px;
   margin: 10px;
   margin-top: 10px;
@@ -323,9 +323,15 @@ p {
 .bookOverlay{
   left: 0px;
   width: 100%;
-  height: 105px;
+  height: 125px;
   background: rgba(0, 0, 0);
   color: aliceblue;
+}
+
+.bookOverlayText{
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .bookDescription{
@@ -359,35 +365,35 @@ p {
 }
 
 .bookDescriptionText{
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .bookTitle{
   padding-top: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 1.5em;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
 .bookAuthor{
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1vw;
+  padding-right: 1vw;
   font-size: 1em;
   font-weight: bold;
 }
 
 .bookPrice{
   position: absolute;
-  bottom: 10px;
-  right: 20px;
-  font-size: 1.5em;
+  bottom: 1vw;
+  right: 1vw;
+  font-weight: bold;
 }
 
 .reviews{
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .checked{

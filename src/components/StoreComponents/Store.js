@@ -6,7 +6,8 @@ import ConnectionStore from "./ConnectionStore";
 const Store = () => {
     return(
         <div>
-            <ConnectionStore />     
+            <ConnectionStore /> 
+
         </div>
     )
 }
