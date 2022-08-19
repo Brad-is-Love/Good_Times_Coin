@@ -1,11 +1,30 @@
 import React from 'react'
 
 const Heading = () => {
+
+  const cat = [
+    "Cooking",
+    "Romance",
+    "Sci-Fi",
+    "Bromance",
+    "Non-Fiction",
+    "Self-Help",
+    "Comics",
+    "Fantasy",
+    "Action",
+    "Thriller"]
+
+  var categories = []
+
+    for(let i=0;i<cat.length;i++){
+      categories.push(<span key={i} className="category">{cat[i]}</span>)
+    }
+
   return (
     <>
-      <div className='smallBlue'>Reminder:<br/>Just do this to learn every part, not necessarily get the shop done quickly</div>
-      {/* ------------- */}
-      <div className='sitetitle'>Books!</div>
+      <div className='categories'>
+        {categories}
+      </div>
     </>
   )
 }

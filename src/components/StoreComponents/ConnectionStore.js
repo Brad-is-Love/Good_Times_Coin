@@ -7,6 +7,7 @@ import StoreFront from './StoreFront';
 import Account from './Account';
 import NotFound from '../NotFound';
 import SearchBox from './SearchBox';
+import Heading from './Heading';
 
 const ConnectionStore = () => {
 
@@ -56,19 +57,19 @@ const ConnectionStore = () => {
      <BrowserRouter>
         <div className="sitebackground pb-1">
             <div className="generalfont">
-            <div className='row sticky-top'>
-                <div className='col'>
-                <NavStore />
+            <div className='row navRow'>
+                <div className='col-2'>
+                    <NavStore />
                 </div>
-                <div className='col'>
+                <div className='col-8'>
                     <SearchBox/>
                 </div>
-                <div className='col'>
+                <div className='col-2'>
                     <ConnectMetamask account={defaultAccount} connectToMeta={connectWalletHandler}/>
                 </div>
-            </div>  
+            </div>
+            <Heading/>  
             <div className='errorMessage'>{errorMessage}</div>
-            <br /><br />
             <Switch>
                     <Route path = "/" exact><StoreFront/></Route>
                     <Route path = "/account" exact><Account account={defaultAccount} networkID={networkID}/></Route>

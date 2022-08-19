@@ -2,9 +2,11 @@ import React from 'react'
 
 const SearchBox = () => {
   return (
-    <div>
-        <input /> 
-    </div>
+  
+      <form className='searchContainer'>
+          <input className='searchBar' placeholder='Search the Good Times Store'/>
+          <button className='searchIcon' type='submit'><i class="fa fa-search"></i></button>
+      </form>
   )
 }
 

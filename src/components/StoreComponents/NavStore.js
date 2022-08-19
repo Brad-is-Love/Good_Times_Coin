@@ -8,8 +8,9 @@ var returnTo = window.location.protocol + "//" + mySiteURL[1];
 function NavStore(props) {
 
   return (
+    <div className="navStore">
     <nav className="navbar navbar-light bg-transparent">
-  <div className="container-fluid">
+    <div className="container-fluid">
     <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -47,6 +48,8 @@ function NavStore(props) {
     </div>
   </div>
 </nav>
+
+</div>
     );
   
 }

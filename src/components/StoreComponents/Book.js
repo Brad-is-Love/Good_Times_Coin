@@ -1,7 +1,10 @@
 import React from 'react'
 import bookSample from "../../craiyon_172824_billionaire.png"
+import Stars from './Stars'
 
 const Book = (props) => {
+
+  //still need to make the #stars showing dynamic
 
 return(
     <div className='bookTile'>
@@ -10,31 +13,23 @@ return(
         <div className='bookOverlayText'>
           <div className='bookTitle'>{props.title}</div>
           <div className='bookPrice'>$4</div>
-          <div className='bookAuthor'>Mick Johansonson</div>
+          <div className='bookAuthor'>{props.author}</div>
           <div className='reviews'>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star"></span>
-            <span className="fa fa-star"></span>
-            <span className='pl-2 pb-2'>3.2/5 (122)</span>
+            <Stars stars={props.stars}/>
+            <span className='pl-2 pb-2'>{props.stars} ({props.reviews})</span>
           </div>
         </div>
       </div>
       <div className='bookDescription'>
         <div className='bookDescriptionSlide'>
-          <div className='bookTitle'>How to be Rich and Look Good</div>
-          <div className='bookAuthor'>Mick Johansonson</div>
+          <div className='bookTitle'>{props.title}</div>
+          <div className='bookAuthor'>{props.author}</div>
           <div className='reviews'>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star"></span>
-            <span className="fa fa-star"></span>
-            <span className='pl-2 pb-2'>3.2/5 (122)</span>
+            <Stars stars={props.stars}/>
+            <span className='pl-2 pb-2'>{props.stars} ({props.reviews})</span>
           </div>
           <div className='bookDescriptionText'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+          {props.description}
           </div>
         </div>
       </div>

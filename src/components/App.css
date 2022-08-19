@@ -399,3 +399,51 @@ p {
 .checked{
   color: orange;
 }
+
+.searchContainer{
+  display: block;
+  width: 100%;
+  /* height: 100%; */
+  margin-top: 15px;
+  border: 1px solid rgb(10, 34, 52);
+  border-radius: 5px;
+}
+
+.searchBar{
+  width:89%;
+  height: 40px;
+}
+
+.searchIcon{
+  width:11%;
+  padding: 5px;
+  background: #2196F3;
+  color: white;
+  font-size: 18px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+.navStore{
+  padding-top: 10px;
+}
+
+.navRow{
+  position: relative;
+  width: 100%;
+}
+
+.categories{
+  display: flex;
+  width: 100%;
+  justify-content:space-around;
+  vertical-align: middle;
+
+}
+
+.category{
+  width: 100%;
+  text-align: center;
+  border: 1px solid#2196F3;
+}

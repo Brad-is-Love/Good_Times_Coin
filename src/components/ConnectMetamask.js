@@ -19,8 +19,8 @@ export default function ConnectMetamask(props) {
           }
           return (
           <div>
-            <div className="mt-3 m-2 bg-transparent d-lg-none d-xl-none d-md-none text-end text-white sticky-top"><div className="psmall">{accountConditional}</div></div>
-            <div className="mt-3 m-2 bg-transparent d-none d-lg-block d-xl-block d-md-block text-white text-end sticky-top">{accountConditional}</div>
+            <div className="mt-3 bg-transparent d-lg-none d-xl-none d-md-none text-end text-white sticky-top"><div className="psmall">{accountConditional}</div></div>
+            <div className="mt-3 bg-transparent d-none d-lg-block d-xl-block d-md-block text-white text-end sticky-top">{accountConditional}</div>
         </div>
           )
 }
