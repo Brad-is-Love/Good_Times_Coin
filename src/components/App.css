@@ -447,3 +447,21 @@ p {
   text-align: center;
   border: 1px solid#2196F3;
 }
+
+.bookDetails{
+  padding-top: 25px;
+}
+
+.feedback{
+  padding-top: 40px;
+}
+
+.reviewer{
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.review{
+  padding-bottom: 15px;
+}
+

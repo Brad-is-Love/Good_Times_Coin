@@ -9,7 +9,7 @@ const StoreFront = () => {
                 <div className='bookContainer'>
                     {books.map((book) => (
                         <div key={book.id}>
-                            <Book title = {book.title} author = {book.author} stars = {book.stars} reviews = {book.reviews} description = {book.description}/>
+                            <Book id = {book.id} title = {book.title} author = {book.author} stars = {book.stars} reviews = {book.reviews} description = {book.description}/>
                         </div>
                     ))}
                 </div>   

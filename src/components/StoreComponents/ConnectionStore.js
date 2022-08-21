@@ -8,6 +8,7 @@ import Account from './Account';
 import NotFound from '../NotFound';
 import SearchBox from './SearchBox';
 import Heading from './Heading';
+import BookDetails from './BookDetails';
 
 const ConnectionStore = () => {
 
@@ -53,6 +54,9 @@ const ConnectionStore = () => {
         }
     }
 
+    var bookDeets = window.location.pathname.split("/");
+    var bookId = bookDeets[3]
+
     return (
      <BrowserRouter>
         <div className="sitebackground pb-1">
@@ -73,6 +77,7 @@ const ConnectionStore = () => {
             <Switch>
                     <Route path = "/" exact><StoreFront/></Route>
                     <Route path = "/account" exact><Account account={defaultAccount} networkID={networkID}/></Route>
+                    <Route path="/book"><BookDetails id={bookId}/></Route>
                     <Route><NotFound/></Route>
                 </Switch>
             </div>

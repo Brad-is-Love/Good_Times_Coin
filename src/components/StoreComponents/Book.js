@@ -4,9 +4,8 @@ import Stars from './Stars'
 
 const Book = (props) => {
 
-  //still need to make the #stars showing dynamic
-
 return(
+  <a href={"book/" + props.title + "/" + props.id}>
     <div className='bookTile'>
       <img className='bookImage' src={bookSample} alt="The billionaire"/>
       <div className='bookOverlay'>
@@ -33,8 +32,8 @@ return(
           </div>
         </div>
       </div>
-      
     </div>
+  </a>
 )}
 
 export default Book

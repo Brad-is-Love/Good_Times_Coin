@@ -1,0 +1,36 @@
+[{
+    "id": 1,
+    "bookId":1,
+    "stars":4,
+    "review": "wasn't very good, charachters were unrealistic",
+    "reviewer": "Jabob Jones"
+},
+{
+    "id": 2,
+    "bookId":1,
+    "stars":2,
+    "review": "was very good, charachters were realistic",
+    "reviewer": "Smiddy Wesston"
+},
+{
+    "id": 3,
+    "bookId":2,
+    "stars":2,
+    "review": "didn't really speak to me",
+    "reviewer": "Jenny Jumngy"
+},
+{
+    "id": 3,
+    "bookId":3,
+    "stars":4,
+    "review": "absolutely fantastic book",
+    "reviewer": "Mrs Carbon"
+},
+{
+    "id": 3,
+    "bookId":3,
+    "stars":5,
+    "review": "lot's of words, which made the book long",
+    "reviewer": "Murry Bestreendy"
+}
+]
