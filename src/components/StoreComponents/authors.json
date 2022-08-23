@@ -1,83 +1,37 @@
 
 [{
     "id":0,
-    "title": "Don't cry for a dog",
-    "author": 0,
-    "price": 4,
-    "stars": 3,
-    "reviews": 43,
+    "author": "Dick Johansonson",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
 },
 {
     "id":1,
-    "title": "How to be Rich and Successful",
-    "author": 1,
-    "price": 4,
-    "stars": 1.2,
-    "reviews": 121,
+    "author": "Ickly McDonald",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
 },
 {
     "id":2,
-    "title": "Phones and the Future",
-    "author": 2,
-    "price": 4,
-    "stars": 3.5,
-    "reviews": 12,
+    "author": "Mary Iston",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
 },
 {
     "id":3,
-    "title": "Drawing Anime for Dummies",
-    "author": 3,
-    "price": 4,
-    "stars": 4.5,
-    "reviews": 115,
+    "author": "Sarah Jacobs",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
 },
 {
     "id":4,
-    "title": "How to be Poor",
-    "author": 1,
-    "price": 4,
-    "stars": 2.2,
-    "reviews": 121,
+    "author": "Uncle Jimmy",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
 },
 {
     "id":5,
-    "title": "The Ten People",
-    "author": 5,
-    "price": 4,
-    "stars": 2,
-    "reviews": 131,
+    "author": "Jenny Lame",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
 },
 {
     "id":6,
-    "title": "The History of Nepal",
-    "author": 6,
-    "price": 4,
-    "stars": 3.5,
-    "reviews": 11,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
-},
-{
-    "id":7,
-    "title": "Monkey Don't Care",
-    "author": 3,
-    "price": 4,
-    "stars": 4,
-    "reviews": 13,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
-},
-{
-    "id":8,
-    "title": "The Dogs of the Night",
-    "author": 6,
-    "price": 4,
-    "stars": 3.5,
-    "reviews": 121,
+    "author": "Smitty Murryson",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
 }
 ]

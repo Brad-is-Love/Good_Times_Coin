@@ -2,12 +2,14 @@ import React from 'react'
 import bookSample from "../../craiyon_172824_billionaire.png"
 import CustomButton from '../CustomButton'
 import books from './books.json'
+import authors from './authors.json'
 import Stars from './Stars'
 import Review from './Review'
+import Author from './Author'
 
 const BookDetails = (props) => {
 
-const book = books[props.id-1]
+const book = books[props.id]
 
 
 
@@ -19,7 +21,7 @@ const book = books[props.id-1]
             </div>
             <div className='bookDetailsText col-6'>
                 <h1>{book.title}</h1>
-                <h4>{book.author}</h4>
+                <h4>{authors[book.author].author}</h4>
                 <div><Stars stars={book.stars}/> {" " +book.stars} {"("+book.reviews+")"}</div>
                 <br/>
                 {book.description}
@@ -31,6 +33,7 @@ const book = books[props.id-1]
                 <CustomButton buttonText = "Pay X GTC"/>
             </div>
         </div>
+        <Author author={book.author} />
     </>
   )
 }
