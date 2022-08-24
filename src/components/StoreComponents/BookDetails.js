@@ -11,14 +11,19 @@ const BookDetails = (props) => {
 
 const book = books[props.id]
 
-
+var currentBook = window.location.origin;
+var thisURL = currentBook + '/review/' + book.title + "/" + book.id
 
   return (
     <>
         <div className='bookDetails row'>
             <div className='bookDetailsImage col-3 border-solid'>
                 <img className='bookImage' src={bookSample} alt="The billionaire"/>
+                <a href={thisURL}>
+                    Review this book
+                </a>
             </div>
+
             <div className='bookDetailsText col-6'>
                 <h1>{book.title}</h1>
                 <h4>{authors[book.author].author}</h4>
@@ -34,6 +39,7 @@ const book = books[props.id]
             </div>
         </div>
         <Author author={book.author} />
+
     </>
   )
 }

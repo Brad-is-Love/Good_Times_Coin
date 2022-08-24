@@ -17,10 +17,9 @@ const Author = (props) => {
 
   return (
     <div>
-        <h2>About the Author</h2>
-        <h4>{authors[props.author].author}</h4>
+        <h3>{authors[props.author].author}</h3>
         <p>{authors[props.author].description}</p>
-        <h4>Books by this Author:</h4>
+        <h4>Books by {authors[props.author].author}:</h4>
         {booksByAuthor.map((book, key) => {
             return(
                 <div key={key}>

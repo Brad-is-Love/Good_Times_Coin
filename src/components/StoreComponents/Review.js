@@ -21,7 +21,6 @@ const Review = (props) => {
 
     return (
         <div className='feedback'>
-            <h3>Reviews</h3>
           {feedback.map((feedback, key) => {
             return(
                 <div key={key}>

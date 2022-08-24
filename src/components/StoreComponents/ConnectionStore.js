@@ -9,6 +9,7 @@ import NotFound from '../NotFound';
 import SearchBox from './SearchBox';
 import Heading from './Heading';
 import BookDetails from './BookDetails';
+import ReviewForm from './ReviewForm';
 
 const ConnectionStore = () => {
 
@@ -78,6 +79,7 @@ const ConnectionStore = () => {
                     <Route path = "/" exact><StoreFront/></Route>
                     <Route path = "/account" exact><Account account={defaultAccount} networkID={networkID}/></Route>
                     <Route path="/book"><BookDetails id={bookId}/></Route>
+                    <Route path="/review"><ReviewForm account={defaultAccount}/></Route>
                     <Route><NotFound/></Route>
                 </Switch>
             </div>
